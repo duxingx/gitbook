@@ -15,7 +15,11 @@
 
 ## SAS篇 <a href="#sas" id="sas"></a>
 
-* [SAS Function](sas/function.md)
+* [SAS Function](sas/function/README.md)
+  * [Special](sas/function/special.md)
+  * [Character](sas/function/character.md)
+  * [Num](sas/function/num.md)
+  * [Perl](sas/function/perl.md)
 * [SAS Macro](sas/macro.md)
 * [SAS Skills](sas/skills.md)
 
