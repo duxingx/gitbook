@@ -27,3 +27,7 @@
 
 * [词汇总结](english-learning/vocabulary.md)
 * [口语Topic准备](english-learning/talking-topic.md)
+
+## 补充篇 <a href="#supplement" id="supplement"></a>
+
+* [正则表达式](supplement/reg.md)
