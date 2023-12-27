@@ -4,7 +4,7 @@
 
 ## Machine Learning
 
-* [Page 2](<README (1).md>)
+* [Page 2](machine-learning/page-2.md)
 
 ## SAS Function
 
