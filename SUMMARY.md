@@ -1,8 +1,10 @@
 # Table of contents
 
+* [😀 First Page](README.md)
+
 ## Machine Learning
 
-* [Page 2](README.md)
+* [Page 2](<README (1).md>)
 
 ## SAS Function
 
