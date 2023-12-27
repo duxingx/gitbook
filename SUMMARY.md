@@ -1,17 +1,17 @@
 # Table of contents
 
-## 机器学习
+## Machine Learning
 
 * [Page 2](README.md)
 
-## SAS函数
+## SAS Function
 
-* [Page 3](sas-han-shu/page-3.md)
+* [Page 3](sas-function/page-3.md)
 
-## SAS技巧
+## SAS Skills
 
-* [Page 1](sas-ji-qiao/page-1.md)
+* [Page 1](sas-skills/page-1.md)
 
-## 英语学习
+## English Learning
 
-* [Page 4](ying-yu-xue-xi/page-4.md)
+* [Page 4](english-learning/page-4.md)
