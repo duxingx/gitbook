@@ -1,8 +1,6 @@
-/* 
-deriving last observation carried forward(locf) variables 
+/* deriving last observation carried forward(locf) variables 
     the last observation carried forward so long as 
-    the measures occur within a five day window before the pill is taken. 
- */
+    the measures occur within a five day window before the pill is taken.  */
  
  
  /* input sample cholesterol data as sdtm lb domain.; */
