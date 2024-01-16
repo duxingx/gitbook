@@ -2,8 +2,6 @@
 
 * [README](README.md)
 
-
-
 ## 统计学习篇 <a href="#statistical-learning" id="statistical-learning"></a>
 
 * [机器学习](statistical-learning/machine-learning.md)
@@ -11,22 +9,16 @@
 * [数理统计](statistical-learning/mathematical-statistics.md)
 * [临床试验统计](statistical-learning/clinical-trial.md)
 
-
-
-
 ## Python篇 <a href="#python" id="python"></a>
 
 * [python基础](python/base.md)
 
-
-
-
 ## SAS篇 <a href="#sas" id="sas"></a>
 
 * [DATA 步](sas/documents/data-step/README.md)
-  * [PROC FORMAT](sas/documents/proc-step/proc-format.md)
 
 * [PROC 步](sas/documents/proc-step/README.md)
+  * [PROC FORMAT](sas/documents/proc-step/proc-format.md)
 
 * [Function](sas/documents/functions/README.md)
   * [Special](sas/documents/functions/special.md)
@@ -36,9 +28,6 @@
   * [Perl](sas/documents/functions/perl.md)
 
 * [Macro](sas/documents/macros/README.md)
-
-
-
 
 ## 英语学习篇 <a href="#english-learning" id="english-learning"></a>
 
