@@ -23,7 +23,6 @@
   * [PROC REPORT](sas/documents/proc-step/proc-report.md)
   * [PROC SQL](sas/documents/proc-step/proc-sql.md)
   * [PROC FREQ](sas/documents/proc-step/proc-freq.md)
-  * [PROC MEANS](sas/documents/proc-step/proc-means.md)
   * [PROC SORT](sas/documents/proc-step/proc-sort.md)
   * [PROC TRANSPOSE](sas/documents/proc-step/proc-transpose.md)
 
