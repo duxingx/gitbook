@@ -19,6 +19,13 @@
 
 * [PROC 步](sas/documents/proc-step/README.md)
   * [PROC FORMAT](sas/documents/proc-step/proc-format.md)
+  * [PROC MEANS](sas/documents/proc-step/proc-means.md)
+  * [PROC REPORT](sas/documents/proc-step/proc-report.md)
+  * [PROC SQL](sas/documents/proc-step/proc-sql.md)
+  * [PROC FREQ](sas/documents/proc-step/proc-freq.md)
+  * [PROC MEANS](sas/documents/proc-step/proc-means.md)
+  * [PROC SORT](sas/documents/proc-step/proc-sort.md)
+  * [PROC TRANSPOSE](sas/documents/proc-step/proc-transpose.md)
 
 * [Function](sas/documents/functions/README.md)
   * [Special](sas/documents/functions/special.md)
