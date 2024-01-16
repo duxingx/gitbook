@@ -230,6 +230,23 @@ PICTURE name <(format-options)>
 2. `(Prefix="string")`选项的作用是，指定一个字符作为格式化值的前缀。
 3. `(mult=.00001)`指定在格式化变量之前要将其值乘以的数字。
 
+#### 1.4.3.5 `picture`语句中的bug
+
+当percent=9.96时，`put(percent,pcta.)`结果会因为四舍五入后长度不一致导致结果不能正常给到理想的format。
+
+可以通过如下的方式进行手动四舍五入。
+
+```sas
+picture pcta(round)
+        0-<10   ='9.9)' (prefix=' (  ')
+        10-<100='99.9)' (prefix=' ( ')
+        100   ='999  )' (prefix=' (')
+ ;
+
+ if 9.95 <= percent < 10 or 99.95 <= percent < 100 then percent = round(percent, 2);
+```
+
+
 ## 1.5. 案例
 
 ### 1.5.1. 案例：picture选项-`prefix="string"`
@@ -614,7 +631,7 @@ PICTURE name <(format-options)>
          tables sex * age / nopercent norow nocol;
          tables sex * color / nopercent norow nocol;
          /*引用自定义的格式*/
-         format sex gender. age agegrp. color  $color. ;
+         format sex gender. age agegrp. color $color. ;
     run;
     ```
 
@@ -623,7 +640,7 @@ PICTURE name <(format-options)>
     ```sas
     /*PROC SQL format选项调用*/
     proc sql;
-      select age  format=agegroup. ,sex format=gender.,income  format=dollar8.,color  format=$color.
+      select age format=agegroup. ,sex format=gender.,income  format=dollar8.,color  format=$color.
       from survey;
     quit;
     ```
