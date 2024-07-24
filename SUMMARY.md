@@ -13,6 +13,13 @@
 
 * [python基础](python/base.md)
 
+
+## R篇
+
+* [R语言编程（Base）](R\r-base.md)
+* [R数据科学](R\r-data-science.md)
+
+
 ## SAS篇 <a href="#sas" id="sas"></a>
 
 * [DATA 步](sas/documents/data-step/README.md)
