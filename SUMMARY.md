@@ -50,3 +50,5 @@
 ## 补充篇 <a href="#supplement" id="supplement"></a>
 
 * [正则表达式](supplement/reg.md)
+* [SQL基础](supplement/sql.md)
+* [Git基础](supplement/git.md)
