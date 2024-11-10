@@ -1,4 +1,6 @@
-/** Clear the environment -----------------------------------------------------*/
+
+
+/* Clear the environment -----------------------------------------------------*/
 proc datasets library=work kill nowarn nolist memtype=data; quit;
 options validvarname=v7;
 dm log 'CLEAR';
