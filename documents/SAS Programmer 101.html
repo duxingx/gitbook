@@ -2,17 +2,15 @@
       <title>SAS Programmer 101</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <link rel="stylesheet" href="file:///c:\Users\xingx\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
-
-
-
-
-
+      
+      <link rel="stylesheet" href="file:///c:\Users\Dux1\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
       <style>
       code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
@@ -22,10 +20,10 @@
     // your code here
   });
 </script></head><body for="html-export">
-
-
+    
+    
       <div class="crossnote markdown-preview  ">
-
+      
 <h1 id="sas-programmer-101">SAS-Programmer-101 </h1>
 <div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="code-chunk-btn-group"><div class="run-btn btn btn-xs btn-primary"><span>▶︎</span></div><div class="run-all-btn btn btn-xs btn-primary">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
 <li><a href="#sas-programmer-101">SAS-Programmer-101</a>
@@ -86,6 +84,24 @@
 </ul>
 </li>
 <li><a href="#attrib%E8%AF%AD%E5%8F%A5"><code>attrib</code>语句</a></li>
+<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>
+<ul>
+<li><a href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D">模式匹配</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a>
+<ul>
+<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%9E%84%E6%88%90">正则表达式的构成</a></li>
+<li><a href="#reg%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">reg基本语法</a></li>
+</ul>
+</li>
+<li><a href="#sas%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0">SAS中的基本函数</a></li>
+<li><a href="#%E4%B8%80%E8%88%AC%E5%85%83%E5%AD%97%E7%AC%A6">一般元字符</a></li>
+<li><a href="#%E5%85%83%E5%AD%97%E7%AC%A6%E5%88%86%E7%BB%84">元字符分组</a></li>
+<li><a href="#%E5%89%8D%E5%90%91%E6%90%9C%E7%B4%A2%E5%92%8C%E5%90%8E%E5%90%91%E6%90%9C%E7%B4%A2%E6%96%AD%E8%A8%80">前向搜索和后向搜索【断言】</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8A%E5%92%8C%E5%86%85%E8%81%94%E4%BF%AE%E9%A5%B0%E7%AC%A6">注释和内联修饰符</a></li>
+<li><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%BB%84%E5%90%88">表达式的组合</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99">常用正则</a></li>
+</ul>
+</li>
 <li><a href="#length%E8%AF%AD%E5%8F%A5"><code>length</code>语句</a>
 <ul>
 <li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</a></li>
@@ -200,9 +216,47 @@
 </li>
 </ul>
 </li>
+<li><a href="#proc-report%E8%BF%87%E7%A8%8B"><code>proc report</code>过程</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E5%8F%A5">基本语句</a></li>
+<li><a href="#ods%E8%AF%AD%E5%8F%A5%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E"><code>ods</code>语句相关说明</a></li>
+<li><a href="#%E8%BF%87%E7%A8%8B%E6%AD%A5options">过程步options</a></li>
+<li><a href="#column%E8%AF%AD%E5%8F%A5"><code>column</code>语句</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99">基本原则</a></li>
+<li><a href="#%E5%A4%9A%E5%B1%82%E8%A1%A8%E5%A4%B4">多层表头</a></li>
+</ul>
+</li>
+<li><a href="#where%E8%AF%AD%E5%8F%A5"><code>where</code>语句</a></li>
+<li><a href="#define%E8%AF%AD%E5%8F%A5"><code>define</code>语句</a></li>
+<li><a href="#by%E8%AF%AD%E5%8F%A5"><code>by</code>语句</a></li>
+<li><a href="#byvar%E7%9A%84%E4%BD%BF%E7%94%A8"><code>#byvar</code>的使用</a></li>
+<li><a href="#break%E4%B8%8Erbreak%E8%AF%AD%E5%8F%A5"><code>break</code>与<code>rbreak</code>语句</a></li>
+<li><a href="#compute%E8%AF%AD%E5%8F%A5"><code>compute</code>语句</a>
+<ul>
+<li><a href="#line%E8%AF%AD%E5%8F%A5"><code>line</code>语句</a></li>
+<li><a href="#call-define%E8%AF%AD%E5%8F%A5"><code>call define</code>语句</a></li>
+</ul>
+</li>
+<li><a href="#footnote%E6%98%BE%E7%A4%BA%E5%9C%A8%E7%AC%AC%E4%B8%80%E9%A1%B5">footnote显示在第一页</a></li>
+</ul>
+</li>
+<li><a href="#proc-transpose%E8%BF%87%E7%A8%8B"><code>proc transpose</code>过程</a>
+<ul>
+<li><a href="#%E8%BF%87%E7%A8%8B%E6%AD%A5%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E">过程步选项说明</a></li>
+<li><a href="#byidvaridlabel%E8%AF%AD%E5%8F%A5"><code>by</code>/<code>id</code>/<code>var</code>/<code>idlabel</code>语句</a></li>
+</ul>
+</li>
+<li><a href="#proc-import%E8%BF%87%E7%A8%8B"><code>proc import</code>过程</a>
+<ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9%E4%BB%8B%E7%BB%8D">常用选项介绍</a></li>
+<li><a href="#proc-import%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5"><code>proc import</code>常用语句</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<hr>
 <h2 id="数据集选项执行顺序">数据集选项执行顺序 </h2>
 <h3 id="选项执行顺序">选项执行顺序 </h3>
 <ul>
@@ -708,10 +762,10 @@ z3 <span class="token operator">=</span> <span class="token macro-string-functio
 <ol>
 <li>
 <p>利用<code>attrib</code>删去所有<code>label</code></p>
-<pre data-role="codeBlock" data-info="c-like" class="language-c-like c-like"><code>data want;
-    set have;
-    attrib _all_ label="";
-run;
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">data</span> want<span class="token punctuation">;</span>
+    <span class="token keyword keyword-set">set</span> have<span class="token punctuation">;</span>
+    attrib _all_ <span class="token keyword keyword-label">label</span><span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
 
 </code></pre></li>
 <li>
@@ -721,6 +775,651 @@ attrib x <span class="token keyword keyword-length">length</span><span class="to
 attrib month1<span class="token operator">-</span>month12 <span class="token keyword keyword-label">label</span><span class="token operator">=</span><span class="token string">'MONTHLY SALES'</span><span class="token punctuation">;</span>
 </code></pre></li>
 </ol>
+<h2 id="正则表达式">正则表达式 </h2>
+<h3 id="模式匹配">模式匹配 </h3>
+<ul>
+<li>模式匹配能够在一个步骤中从字符串中搜索和提取多个匹配模式。</li>
+<li>模式匹配还允许在一个步骤中对字符串进行多次替换。</li>
+<li>可以在源文件中搜索字符串并返回匹配的位置。</li>
+<li>SAS中的模式匹配可以通过Perl正则表达函数和CALL例程来实现。</li>
+</ul>
+<h3 id="基本语法">基本语法 </h3>
+<h4 id="正则表达式的构成">正则表达式的构成 </h4>
+<ul>
+<li>Perl正则表达式由<strong>字符</strong>和称为<strong>元字符</strong>的特殊字符组成。</li>
+<li>在执行匹配时，SAS将在源字符串中搜索您指定的Perl正则表达式匹配的子字符串。</li>
+<li>使用元字符使SAS能够执行某些特殊操作。这些操作包括强制匹配从特定位置开始，并匹配特定的一组字符。</li>
+</ul>
+<h4 id="reg基本语法">reg基本语法 </h4>
+<ul>
+<li>
+<p>分隔符：</p>
+<ul>
+<li><code>"/regular-expression/"</code>：成对的正斜杠是默认的分隔符。</li>
+</ul>
+</li>
+<li>
+<p>搜寻：</p>
+<ul>
+<li><code>res = prxmatch("/world/", "Hello world!");</code></li>
+</ul>
+</li>
+<li>
+<p>替换：</p>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">data</span> x<span class="token punctuation">;</span>
+    res <span class="token operator">=</span> <span class="token function keyword">prxchange</span><span class="token punctuation">(</span><span class="token string">"s/world/planet/"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Hello world world world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token step keyword">proc print</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token comment">/*  结果为： Hello planet planet world */</span>
+</code></pre></li>
+<li>
+<p>解释：</p>
+<ol>
+<li>"<code>s/world/planet/</code>"， 由3部分组成，**<code>s</code>**指定待替换的元字母， <code>world</code>为正则表达式， <code>planet</code>为新值，即满足正则表达式的内容替换为<code>planet</code></li>
+<li><code>2</code>， 指定替换次数，2表示替换前2次，<code>-1</code>表示全部替换</li>
+<li><code>Hello world world world</code>， 被匹配字符串</li>
+</ol>
+</li>
+</ul>
+<h3 id="sas中的基本函数">SAS中的基本函数 </h3>
+<table>
+<thead>
+<tr>
+<th>Function(Args)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prxparse(regx)</code></td>
+<td>以正则式作为输入，输出SAS中指定替代该正则式的<code>id(regx_id)</code></td>
+</tr>
+<tr>
+<td><code>prxmatch(regx/regx_id, string)</code></td>
+<td>以正则表达式或者正则表达式id以及被匹配对象作为输入。 返回首次匹配到的开始位置，匹配失败返回0</td>
+</tr>
+<tr>
+<td><code>prxposn(rex_id,rnk, start,length)</code></td>
+<td>来获取需要的反向匹配结果。 输入为4个参数：第一个为正则式id，第二个是方向匹配的序号，第三个和第四个是输出参数，函数执行结束它们会被赋值为反向匹配在原匹配字符串中的位置和长度；这样，利用这两个返回的值并结合substr就可以得到反向匹配字符串</td>
+</tr>
+<tr>
+<td><code>prxposn(regx_id,rnk,string)</code></td>
+<td>返回子表达式对应的匹配值，注意子表达式含义</td>
+</tr>
+<tr>
+<td><code>prxchange(regx/regx_id,oldstring,newstring,length,trunk,num)</code></td>
+<td>替换匹配模式的值</td>
+</tr>
+<tr>
+<td><code>prxsubstr(regx/regx_id,string,start,length)</code></td>
+<td>返回首次匹配的位置和长度，匹配失败，则start为0</td>
+</tr>
+<tr>
+<td><code>prxnext(regx/regx_id,start,stop,string,position,length)</code></td>
+<td>返回多个匹配位置和长度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="一般元字符">一般元字符 </h3>
+<table>
+<thead>
+<tr>
+<th>Meta-Character</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>non-metacharacter</code></td>
+<td>非"元字符",也可以理解为非特殊字符，即没有特殊意义的字符。</td>
+<td><code>"/abc/"</code> 表示匹配包含"<em>abc</em>"的字符串</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>在字符串的开始匹配</td>
+<td><code>^cat</code>  匹配"cat"，"cats"但不匹配"the cat"</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>在字符串的结尾匹配</td>
+<td><code>cat$</code>  匹配"the cat" 但不匹配"cat in the hat"</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>指定or条件</td>
+<td><code>"sas|java"</code> 可以同时匹配"sas"和"java"</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>匹配除换行符"\n"之外的任何单个字符</td>
+<td><code>r.n</code> 匹配"ron"，"run"，"ran" <code>".*"</code> 可以匹配所有字符串 <code>[.\n]</code>  匹配任意字符</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>匹配前字符0次或多次（进行贪婪匹配）</td>
+<td><code>cat*</code>  匹配"cat"，"cats" <code>c(at)*</code> 匹配"c", "cat", "catatat" <code>a.*b</code> 匹配"aabab"</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>匹配前字符1次或多次（进行贪婪匹配）</td>
+<td><code>\d+</code> 匹配一个或多个数字</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配前字符0次或1次（进行贪婪匹配）</td>
+<td><code>hello?</code> 匹配"hell"，"hello"</td>
+</tr>
+<tr>
+<td><code>*?</code></td>
+<td>匹配0次或多次（进行懒惰匹配,匹配到第一个就结束匹配了，不会继续先后匹配）</td>
+<td><code>a.*?b</code>匹配"aabab"中的"aab"</td>
+</tr>
+<tr>
+<td><code>+?</code></td>
+<td>匹配1次或多次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配0次或1次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n}?</code></td>
+<td>精确匹配n次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n,}?</code></td>
+<td>匹配至少n次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n,m}?</code></td>
+<td>匹配至少n次，不超过m次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>匹配n次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>匹配至少n次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>匹配n到m次（进行懒惰匹配）</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>分组</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>( )</code></td>
+<td>表示一个分组。</td>
+<td><code>"/(abc)(def)/"</code> "<em>abc</em>"表示组1，"<em>def</em>"表示组2</td>
+</tr>
+<tr>
+<td><code>[...]</code></td>
+<td>匹配中括号内的任一字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[^....]</code></td>
+<td>不匹配中括号内的任何字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>匹配a到z范围内的任一字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[^a-z]</code></td>
+<td>不匹配a到z范围内的任何字符</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(?:...)</code></td>
+<td>指定一个非捕获组</td>
+<td>"()"的字符中以"?"开头的话这些元素将不能被认定为一组字符，这一写法常常用于断言</td>
+</tr>
+<tr>
+<td><code>{ }</code> <code>[ ]</code> <code>( )</code> <code>^</code> <code>$</code> <code>.</code> <code>|</code> <code>*</code> <code>+</code> <code>?</code> <code>\</code></td>
+<td>这个字符串在正则表达式中具有一些特殊含义，若想匹配，则需要在前面加上"\"。</td>
+<td><code>"/\\/"</code> 表示匹配包含"\"的字符串，其他符号同理</td>
+</tr>
+<tr>
+<td><strong>转义</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>这个字符是正则表达式的基本字符，它使下一个出现的字符被赋予特殊含义。</td>
+<td><code>"/\d/"</code> 这个表达并非表示匹配字符"d", 而需要将"\d"看为一个整体，表示一个数字</td>
+</tr>
+<tr>
+<td><code>\1</code> <code>\2</code> <code>\3</code> <code>\n</code></td>
+<td>n是一个具体的数字，代表匹配捕捉缓存区n中的数据，缓存区n可以理解成组n</td>
+<td><code>"/(abc)(def) \1\2/"</code> "\1"可以代表组1中被缓存的"abc"字符串，"\2"可以代表"def"字符串，这样我可以就可以将要写的表达式"/(abc)(def)(abc)(def)/"简化成前方的写法</td>
+</tr>
+<tr>
+<td><code>\a</code></td>
+<td>警示字符，指代ASCII编码为7的字符</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\A</code></td>
+<td>匹配字符串中首个字符，一般用于在开头插入字符串</td>
+<td><code>prxchange("s/\A/start/",-1,"adc")</code>结果是"startadc"</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配一个字符边界</td>
+<td><code>"er\b"</code>  匹配 了"never"中的"er" 字符串 , 但并不匹配"verb" 中的"er"</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>匹配一个非字符边界</td>
+<td>和上面"\b"的例子会是相反的结果</td>
+</tr>
+<tr>
+<td><code>\cA-\cZ</code></td>
+<td>匹配一个控制字符， 控制字符都是非打印的字符</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\C</code></td>
+<td>匹配一个单字节的字符</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>匹配一个数字，即0-9</td>
+<td><code>"/\d/"</code> 匹配0-9中的任何一个</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>匹配一个非数字，即除了0-9中的任何一个字符</td>
+<td><code>"/\D/"</code> 匹配除了0-9中的任何一个字符</td>
+</tr>
+<tr>
+<td><code>\e</code></td>
+<td>匹配一个转义字符</td>
+<td>“\n”换行符，”\r”回车符都属于转义字符</td>
+</tr>
+<tr>
+<td><code>\E</code></td>
+<td>指代的是字符大小写修饰符</td>
+<td>prxchange(“s/\E/-/“,-1,”adcEFG”) 输出的结果”-a-d-c-E-F-G-“</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>匹配一个换页符</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\l</code></td>
+<td>申明下一个字符为小写</td>
+<td>“\lABC” 可以匹配”aBC”</td>
+</tr>
+<tr>
+<td><code>\L</code></td>
+<td>申明下一个字符的\E元素是小写的</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>n是字母n，代表换行符</td>
+<td>可以匹配换行符</td>
+</tr>
+<tr>
+<td><code>\num</code></td>
+<td>num是一个数字，代表组num的缓存区, 在匹配时使用</td>
+<td><code>"/(abc)\1/"</code>, 中"\1"可以代表组1中被缓存的"abc"字符串</td>
+</tr>
+<tr>
+<td><code>$num</code></td>
+<td>num是一个数字，代表组num的缓存区, 在替换时使用</td>
+<td><code>prxchange("s/(abc)(def)/$1/",-1,"abcdef")</code> 结果是"abc"</td>
+</tr>
+<tr>
+<td><code>\Q</code></td>
+<td>转义所有非文本字符</td>
+<td><code>"\Q\%"</code> 可以匹配"%"</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>匹配一个回车符</td>
+<td>回车符</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>匹配一个空格，包括空格，tab键，分页符和其他空格</td>
+<td><code>\s</code> 等于[\f\n\r\t\v]</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>匹配一个非空格</td>
+<td>\S就等于除了[\f\n\r\t\v]之外的所有字符</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>匹配一个tab字符</td>
+<td>相当于电脑上tab键的效果</td>
+</tr>
+<tr>
+<td><code>\u</code></td>
+<td>申明下一个字符为大写</td>
+<td><code>"\uabc"</code> 可以匹配"Abc"</td>
+</tr>
+<tr>
+<td><code>\U</code></td>
+<td>申明下一个字符的\E元素是大写的</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\v or \x0B</code></td>
+<td>垂直空白格</td>
+<td>非常规空格的一种</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>匹配字母，数字和下划线，即sas变量命名规则</td>
+<td><code>"\w+"</code>匹配"abc123_"</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>匹配除了字母，数字和下划线的所有字符</td>
+<td><code>"\W+"</code> 可以匹配" 你好"</td>
+</tr>
+<tr>
+<td><code>\ddd</code></td>
+<td>d为8进制数字，匹配一个8进制的字符</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\xdd</code></td>
+<td>d为16进制数字，匹配一个16进制的字符</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>\z</code></td>
+<td>匹配字符串中最后字符，一般用于在最后插入字符串</td>
+<td><code>prxchange("s/\z/end/",-1,"adc")</code> 结果会是"adcend"</td>
+</tr>
+<tr>
+<td><code>\Z</code></td>
+<td>匹配字符串中最后字符, 若最后是换行符，则匹配换行符前的字符</td>
+<td>可以理解为段落前的最后一个可见字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="元字符分组">元字符分组 </h3>
+<table>
+<thead>
+<tr>
+<th><strong>元字符</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[...]</td>
+<td>匹配中括号内的任一字符</td>
+</tr>
+<tr>
+<td>[^....]</td>
+<td>不匹配中括号内的任何字符</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>匹配a到z范围内的任一字符</td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td>不匹配a到z范围内的任何字符</td>
+</tr>
+<tr>
+<td>[[:alpha:]]、[[:^alpha:]]</td>
+<td>匹配或不匹配字母字符</td>
+</tr>
+<tr>
+<td>[[:alnum:]]、[[:^alnum:]]</td>
+<td>匹配或不匹配字母数值字符</td>
+</tr>
+<tr>
+<td>[[:ascii:]]、[[^:ascii:]]</td>
+<td>匹配ASCII字符或非ASCII字符</td>
+</tr>
+<tr>
+<td>[[:blank:]]、[[^:blank:]]</td>
+<td>匹配空白或非空白字符</td>
+</tr>
+<tr>
+<td>[[:cntrl:]]、[[^:cntrl:]]</td>
+<td>匹配控制或非控制字符</td>
+</tr>
+<tr>
+<td>[[:digit:]]、[[^:digit:]]</td>
+<td>匹配数字或非数字字符</td>
+</tr>
+<tr>
+<td>[[:graph:]]、[[^:graph:]]</td>
+<td>匹配可见字符（排除空格），或相反</td>
+</tr>
+<tr>
+<td>[[:lower:]]、[[^:lower:]]</td>
+<td>匹配小写字符，或相反</td>
+</tr>
+<tr>
+<td>[[:print:]]、[[^:print:]]</td>
+<td>匹配可打印字符，或相反</td>
+</tr>
+<tr>
+<td>[[:punct:]]、[[^:punct:]]</td>
+<td>匹配标点符号，或相反</td>
+</tr>
+<tr>
+<td>[[:space:]]、[[^:space:]]</td>
+<td>匹配空格或非空格</td>
+</tr>
+<tr>
+<td>[[:upper:]]、[[^:upper:]]</td>
+<td>匹配大写字符或相反</td>
+</tr>
+<tr>
+<td>[[:word:]]、[[^:word:]]</td>
+<td>匹配一个单词或相反</td>
+</tr>
+<tr>
+<td>[[:xdigit:]]、[[^:xdigit:]]</td>
+<td>匹配一个十六进制字符或不匹配</td>
+</tr>
+</tbody>
+</table>
+<h3 id="前向搜索和后向搜索断言">前向搜索和后向搜索【断言】 </h3>
+<table>
+<thead>
+<tr>
+<th><strong>元字符</strong></th>
+<th><strong>描述</strong></th>
+<th><strong>举例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(？=...)</td>
+<td>肯定的，向前的回顾</td>
+<td>"/abc(?=A)/"匹配"abcABC"字符串中的"abc"</td>
+</tr>
+<tr>
+<td>(？！...)</td>
+<td>否定的，向前的回顾</td>
+<td>"/abc(?!A)/"不能匹配"abcABC"字符串中的"abc"</td>
+</tr>
+<tr>
+<td>(?&lt;=...)</td>
+<td>肯定的，向后的回顾</td>
+<td>"(?&lt;=A)abc"匹配"CBAabc"字符串中的"abc"</td>
+</tr>
+<tr>
+<td>(?&lt;!...)</td>
+<td>否定的，向后的回顾</td>
+<td>"(?&lt;!A)abc"不能匹配"CBAabc"字符串中的"abc"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="注释和内联修饰符">注释和内联修饰符 </h3>
+<table>
+<thead>
+<tr>
+<th><strong>元字符</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(?#text)</td>
+<td>指定注释</td>
+</tr>
+<tr>
+<td>(?imsx)</td>
+<td>指定内嵌的模式匹配注释</td>
+</tr>
+</tbody>
+</table>
+<h3 id="表达式的组合">表达式的组合 </h3>
+<table>
+<thead>
+<tr>
+<th><strong>元字符</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ST</td>
+<td>如果对于S来说A比A’好，那么AB就好于A'B'.</td>
+</tr>
+<tr>
+<td>S|T</td>
+<td>如果S能匹配，那么就比只有T能匹配时好</td>
+</tr>
+<tr>
+<td>S{repeat-count}</td>
+<td>匹配尽可能多的S</td>
+</tr>
+<tr>
+<td>S{min,max}</td>
+<td>匹配max次到min次S</td>
+</tr>
+<tr>
+<td>S{min,max}?</td>
+<td>匹配min次到max次S</td>
+</tr>
+<tr>
+<td>S?,S*,S+</td>
+<td>匹配S{0,1}，S{0,big-number}. S{1,big-number}</td>
+</tr>
+<tr>
+<td>S??, S*?, S+</td>
+<td>同S{0,1}？，S{0,big-number}?, S{1,big-number}？</td>
+</tr>
+<tr>
+<td>(?=S), (?&lt;=S)</td>
+<td>考虑S的最佳匹配</td>
+</tr>
+<tr>
+<td>(?!S), (?&lt;!S)</td>
+<td>不需要描述组内操作顺序，因为只有S是否匹配是重要的</td>
+</tr>
+</tbody>
+</table>
+<h3 id="常用正则">常用正则 </h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>正则表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>匹配中文字符</td>
+<td><code>[\u4e00-\u9fa5]</code></td>
+</tr>
+<tr>
+<td>匹配双字节字符 (包括汉字在内)</td>
+<td><code>[^\x00-\xff]</code> 可以用来计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）</td>
+</tr>
+<tr>
+<td>匹配空白行</td>
+<td><code>\n\s*\r</code> 评注：可以用来删除空白行</td>
+</tr>
+<tr>
+<td>匹配HTML标记</td>
+<td><code>&lt;(\S*?)[^&gt;]</code><em><code>&gt;.</code></em><code>?&lt;/\1&gt;|&lt;.*? /&gt;</code>仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力</td>
+</tr>
+<tr>
+<td>匹配首尾空白字符</td>
+<td><code>^\s*|\s*$</code>可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式</td>
+</tr>
+<tr>
+<td>匹配Email地址</td>
+<td><code>\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)</code> 表单验证时很实用</td>
+</tr>
+<tr>
+<td>匹配网址URL</td>
+<td><code>[a-zA-z]+://[^\s]*</code> 基本可以满足需求</td>
+</tr>
+<tr>
+<td>匹配帐号是否合法 (字母开头，允许5-16字节，允许字母数字下划线)</td>
+<td><code>[a-zA-Z0-9_]{4,15}$</code> 表单验证时很实用</td>
+</tr>
+<tr>
+<td>匹配国内电话号码</td>
+<td><code>\d{3}-\d{8}|\d{4}-\d{7}</code> 匹配形式如 0511-4405222 或 021-87888822</td>
+</tr>
+<tr>
+<td>匹配腾讯QQ号</td>
+<td><code>[1-9][0-9]{4,}</code> 腾讯QQ号从10000开始</td>
+</tr>
+<tr>
+<td>匹配中国邮政编码</td>
+<td><code>[1-9]\d{5}(?!\d)</code> 中国邮政编码为6位数字</td>
+</tr>
+<tr>
+<td>匹配身份证</td>
+<td><code>\d{15}|\d{18}</code> 中国的身份证为15位或18位</td>
+</tr>
+<tr>
+<td>匹配ip地址</td>
+<td><code>\d+.\d+.\d+.\d+</code> 提取ip地址时有用</td>
+</tr>
+<tr>
+<td>匹配特定数字</td>
+<td><code>^\d*</code>匹配正整数 <code>^−[1−9]\d*</code> 匹配负整数 <code>^-?[1-9]\d*</code>匹配整数 <code>^[1−9]\d∗|0</code> 匹配非负整数（正整数+0） <code>^-[1-9]\d*|0</code>匹配非正整数（负整数+0） <code>^[1−9]\d*.\d*|0.\d*[1−9]\d*</code> 匹配正浮点数 <code>^-([1-9]\d*.\d*|0.\d*[1-9]\d*)</code>匹配负浮点数 <code>^−?([1−9]\d*.\d*|0.\d*[1−9]\d*|0?.0+|0)</code>匹配浮点数 <code>^[1−9]\d*.\d*|0.\d*[1−9]\d*|0?\.0+|0</code>匹配非负浮点数（正浮点数+0） <code>^(-([1-9]\d*.\d*|0.\d*[1-9]\d*))|0?\.0+|0</code>匹配非正浮点数（负浮点数+0）</td>
+</tr>
+<tr>
+<td>匹配特定字符串</td>
+<td><code>^[A-Za-z]+</code>匹配由26个英文字母组成的字符串 <code>^[A-Z]+</code>匹配由26个英文字母的大写组成的字符串 <code>^[a-z]+</code>匹配由26个英文字母小写组成的字符串 <code>^[A-Za-z0-9]+</code>匹配由数字和26个英文字母组成的字符串 <code>^\w+$</code>匹配由数字、26个英文字母或者下划线组成的字符串</td>
+</tr>
+</tbody>
+</table>
 <h2 id="length语句"><code>length</code>语句 </h2>
 <h3 id="使用说明">使用说明 </h3>
 <ul>
@@ -1545,7 +2244,7 @@ x    y  rt
 <li>范围端点为有限值，但不包含有限值：用<code>&lt;-</code>  <code>-&lt;</code>来表示不包括范围的结尾值，<code>&lt;</code>在哪边表示不包括哪边的界限；<br>
 举例：0&lt;-1, 1-&lt;100, -1&lt;-&lt;6；</li>
 <li>可用关键词<code>other</code>给未分配的值分配格式；</li>
-<li>用<code>. </code>表示缺失：无论数值还是字符都只能使用<code>.</code> ，不能使用<code>""</code></li>
+<li>用<code>.</code>表示缺失：无论数值还是字符都只能使用<code>.</code> ，不能使用<code>""</code></li>
 <li>用<code>_same_</code>表示给的值保持原始值不变；</li>
 </ol>
 <pre data-role="codeBlock" data-info="SAS" class="language-sas SAS"><code><span class="token step keyword">proc format</span><span class="token punctuation">;</span>
@@ -1886,7 +2585,627 @@ person    13    19    teen     N        N
 person    20    64    adult    N        N
 person    65   HIGH    senior  Y        N     H
 */</span>
-</code></pre>
+</code></pre><h2 id="proc-report过程"><code>proc report</code>过程 </h2>
+<h3 id="基本语句">基本语句 </h3>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token keyword keyword-ods">ods</span> escapechar<span class="token operator">=</span><span class="token string">"~"</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> listing <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> rtf <span class="token keyword keyword-file">file</span><span class="token operator">=</span><span class="token string">"/home/pic0xxd/test.rtf"</span> style<span class="token operator">=</span>global<span class="token punctuation">.</span>rtf operator<span class="token operator">=</span><span class="token string">"~{\dntblnsbdb}"</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-title6">title6</span> j<span class="token operator">=</span>l <span class="token string">"#byval2"</span><span class="token punctuation">;</span>
+<span class="token step keyword">proc sort</span> <span class="token proc-args"><span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">sashelp.class</span> <span class="token arg keyword">out</span><span class="token operator">=</span><span class="token arg-value">class</span><span class="token punctuation">;</span></span> <span class="token keyword keyword-by">by</span> sex<span class="token punctuation">;</span> <span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token step keyword">proc report</span> <span class="token proc-args"><span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">class</span> <span class="token arg keyword">nowd</span> <span class="token arg keyword">split</span><span class="token operator">=</span><span class="token string">"~"</span> <span class="token arg keyword">headline</span> <span class="token arg keyword">headskip</span> <span class="token arg keyword">missing</span> <span class="token arg keyword">spacing</span><span class="token operator">=</span><span class="token number">1</span>
+        <span class="token function keyword">style</span><span class="token punctuation">(</span><span class="token arg keyword">report</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token arg keyword">protectspecialchars</span> <span class="token operator">=</span> <span class="token arg-value">off</span> <span class="token arg keyword">asis</span> <span class="token operator">=</span> <span class="token arg-value">on</span><span class="token punctuation">]</span>
+        <span class="token function keyword">style</span><span class="token punctuation">(</span><span class="token arg keyword">header</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token arg keyword">just</span><span class="token operator">=</span><span class="token arg-value">l</span> <span class="token arg keyword">protectspecialchars</span><span class="token operator">=</span><span class="token arg-value">off</span> <span class="token arg keyword">asis</span><span class="token operator">=</span><span class="token arg-value">on</span><span class="token punctuation">]</span>
+        <span class="token function keyword">style</span><span class="token punctuation">(</span><span class="token arg keyword">column</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token arg keyword">just</span><span class="token operator">=</span><span class="token arg-value">l</span> <span class="token arg keyword">protectspecialchars</span><span class="token operator">=</span><span class="token arg-value">off</span> <span class="token arg keyword">asis</span><span class="token operator">=</span><span class="token arg-value">on</span><span class="token punctuation">]</span>
+        <span class="token function keyword">style</span><span class="token punctuation">(</span><span class="token arg keyword">lines</span><span class="token punctuation">)</span>  <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token arg keyword">outputwidth</span><span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">%</span> <span class="token arg keyword">protectspecialchars</span><span class="token operator">=</span><span class="token arg-value">off</span> <span class="token arg keyword">asis</span><span class="token operator">=</span><span class="token arg-value">on</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+    <span class="token keyword keyword-column">column</span> sex <span class="token keyword keyword-name">name</span> age height weight<span class="token punctuation">;</span>
+        <span class="token keyword keyword-by">by</span> sex<span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> sex <span class="token operator">/</span> order flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> <span class="token keyword keyword-name">name</span> <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> age <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> height <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> weight <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">19</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    break <span class="token keyword keyword-after">after</span> sex <span class="token operator">/</span> page<span class="token punctuation">;</span>
+    <span class="token keyword keyword-compute">compute</span> before sex<span class="token punctuation">;</span>
+        line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-endcomp">endcomp</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> rtf <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> listing<span class="token punctuation">;</span>
+</code></pre><h3 id="ods语句相关说明"><code>ods</code>语句相关说明 </h3>
+<ul>
+<li>
+<p>指定转义字符</p>
+<p><code>ods escapechar="~";</code></p>
+</li>
+<li>
+<p>先开后关，后开先关</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>ods listing <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
+ods rtf <span class="token keyword keyword-file">file</span><span class="token operator">=</span><span class="token string">"xxx.rtf"</span><span class="token punctuation">;</span>
+
+
+ods rtf <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
+ods listing<span class="token punctuation">;</span>
+</code></pre></li>
+<li>
+<p>output对齐的ods选项</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>ods rtf <span class="token keyword keyword-file">file</span><span class="token operator">=</span><span class="token string">"test.rtf"</span> operator<span class="token operator">=</span><span class="token string">"{\jexpand\dntblnsbdb}"</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ul>
+<h3 id="过程步options">过程步options </h3>
+<table>
+<thead>
+<tr>
+<th>常用选项</th>
+<th>选项的作用</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nowd</code>(nowindows)</td>
+<td>将结果显示到输出窗口和结果查看器窗口，如果不加该选项，绝大多数情况下加上该选项。</td>
+<td>无，默认输出到一个新的报表窗口，不方便查看。</td>
+</tr>
+<tr>
+<td><code>headline</code></td>
+<td>在表头下方显示一条分割线，使表头与下方数值分隔开。</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>headskip</code></td>
+<td>在所有列标题下面或横线(HEADSKIP)下面写一个空行。</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>split=</code></td>
+<td>指定label的分隔符，与ods escapechar无关。</td>
+<td>/</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td>生成的表格包含所有的横竖框线。</td>
+<td>无，没有任何框线</td>
+</tr>
+<tr>
+<td><code>showall</code></td>
+<td>强制所有column中出现的列都输出，即使define后面的选项是noprint! 据说这是一个debug的好工具，便于查看有时候group和order的变量为什么不起作用。但是工作中不常用。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>center</code>|<code>nocenter</code></td>
+<td>center: 输出的列都是居中。
+nocenter:输出的列都是左对齐。</td>
+<td>center</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>输出proc report输出报告时对各列配置的属性，包括宽度，对齐方式等。一般到后面我们会手动给各列设置长度。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>noheader</code></td>
+<td>不输出列标题，一般在用两个proc report的时候，不想输出第二个report的标题就可以加这个选项，但是工作中输出listing每页都得输出列标题。所以不常用。</td>
+<td></td>
+</tr>
+<tr>
+<td><code>missing</code></td>
+<td>对于变量值中有缺失值的，也当作一个值输出（只对order,group,across选项的值有效），这个必须添加，因为工作中肯定会遇到缺失值。如果某个变量全部是缺失值，会报这个warning。<code>Warning: A GROUP, ORDER, or ACROSS variable is missing on every observation.</code></td>
+<td>不显示缺失值
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="column语句"><code>column</code>语句 </h3>
+<h4 id="基本原则">基本原则 </h4>
+<ul>
+<li>指定输出的一个或多个变量，控制变量在输出中的顺序。</li>
+<li>当指定的变量均为字符型时，会输出所有指定变量的每一条观测；</li>
+<li>当指定的变量均为数值型时，仅输出指定数值变量的总和，而不是每一条观测；</li>
+<li>当指定的变量既有数值变量又有字符变量时，输出指定变量的每一条观测；</li>
+</ul>
+<h4 id="多层表头">多层表头 </h4>
+<ul>
+<li>方法一：中间会连接到一起<br>
+其中的"<code>^</code>"通过<code>ods escapechar</code>指定，不能与<code>proc report</code>中<code>split=</code>选项指定的符号相同。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token keyword keyword-column">column</span> sex <span class="token keyword keyword-name">name</span> age
+        <span class="token punctuation">(</span><span class="token string">"^S={borderleftcolor=white
+            borderrightcolor=white
+            borderbottomcolor=black
+            borderbottomwidth=.05} BMI info"</span>
+        height weight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li>方法二：中间不会连接到一起<br>
+其中的"<code>^</code>"通过<code>proc report</code>中<code>split=</code>选项指定。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token macro-keyword keyword">%let</span> line1<span class="token operator">=</span><span class="token macro-keyword keyword">%sysfunc</span><span class="token punctuation">(</span><span class="token function keyword">repeat</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span><span class="token number">39</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-column">column</span> sex <span class="token keyword keyword-name">name</span> age <span class="token punctuation">(</span><span class="token string">"BMI info~&amp;line1."</span> height weight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="where语句"><code>where</code>语句 </h3>
+<p>用于筛选数据</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-proc">proc</span> report <span class="token keyword keyword-data">data</span><span class="token operator">=</span>sashelp<span class="token punctuation">.</span>class<span class="token punctuation">;</span>
+    <span class="token keyword keyword-where">where</span> sex<span class="token operator">=</span><span class="token string">'F'</span> <span class="token operator">and</span> weight <span class="token operator">&gt;</span> <span class="token number">70</span><span class="token punctuation">;</span>
+run<span class="token punctuation">;</span>
+</code></pre><h3 id="define语句"><code>define</code>语句 </h3>
+<p>为单个变量指定特定的options。</p>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token keyword keyword-DEFINE">DEFINE</span> variable <span class="token operator">/</span> <span class="token operator">&lt;</span><span class="token function keyword">option</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">&gt;</span>  <span class="token operator">&lt;</span><span class="token string">'column-heading'</span><span class="token operator">&gt;</span> <span class="token punctuation">;</span>
+</code></pre><table>
+<thead>
+<tr>
+<th>常用选项</th>
+<th>选项的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>format=</code></td>
+<td>指定数值型变量的显示格式</td>
+</tr>
+<tr>
+<td><code>n,mean</code>,<code>std</code>,<code>median</code>,
+<code>q1</code>,<code>min</code>,<code>max</code>...</td>
+<td>各种统计量</td>
+</tr>
+<tr>
+<td><code>width=</code></td>
+<td>指定列宽，默认宽度：字符-变量长度，数值-9</td>
+</tr>
+<tr>
+<td><code>spacing=</code></td>
+<td>指定选定列和紧接其左侧的列之间的空白字符。默认为2</td>
+</tr>
+<tr>
+<td><code>center</code>,<code>left</code>,<code>right</code></td>
+<td>表格中数据对齐方式；默认：数值-右对齐，字符-左对齐。如果在<code>style(column)={}</code>中定义了居中等格式，此选项不起作用。</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>指定变量将会在每一个显示出来。可以实现同一个subject折页显示不同变量。</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>用于在指定的列开始新的页面。可以配合<code>id</code>选项实现折页。</td>
+</tr>
+<tr>
+<td><code>flow</code></td>
+<td>变量长度超过定义的宽带之后，自动换行显示。</td>
+</tr>
+<tr>
+<td>'column-heading'</td>
+<td>指定列标题的标签，超过列宽会自动换行，也可通过<code>split=</code>指定的分隔符。</td>
+</tr>
+<tr>
+<td>变量的显示方式</td>
+<td>变量的显示方式有6种。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>6种变量显示方式
+<ol>
+<li>
+<p><code>display</code></p>
+<ul>
+<li>显示每一条观测，字符变量默认用法。</li>
+</ul>
+</li>
+<li>
+<p><code>analysis</code></p>
+<ul>
+<li>指定变量为分析变量，并指定统计量（默认<code>sum</code>），数值型变量的默认用法。</li>
+</ul>
+</li>
+<li>
+<p><code>order</code></p>
+<ul>
+<li>指定变量为顺序变量，相同变量值，只显示一个，显示每一条观测。</li>
+<li>并且这些行按顺序(升序)排列，<code>descending</code>(降序)。生成listing  report。</li>
+<li>可以在<code>order</code>中定义选项：
+<ul>
+<li><code>order=data</code>: 排序规则为数据集中所有观测值的出现顺序。</li>
+<li><code>order=interval</code>: 排序规则为数据集中原本的顺序。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>group</code></p>
+<ul>
+<li>(汇总)指定变量为分组变量，为变量的每个唯一值创建一行。生成summary report。</li>
+<li>column中所有字符变量均为分组变量时，默认生成column中其他数值型变量的统计量（默认SUM）。</li>
+<li>如果需要显示其他统计量，可以使用define语句对数值型变量进行指定。</li>
+</ul>
+</li>
+<li>
+<p><code>across</code></p>
+<ul>
+<li>(频数)为变量的每个唯一值创建一列，产生列分组。</li>
+<li>ACROSS的变量生成频数值（COUNT），其他数值型变量则显示sum统计量。</li>
+</ul>
+</li>
+<li>
+<p><code>computed</code></p>
+<ul>
+<li>输出中添加计算变量。</li>
+<li>通过计算创建新变量<code>new_var</code>，<code>new_var</code>需要在<code>column</code>语句中。</li>
+<li>如果计算中使用到了其他变量<code>other_var</code>，那么在<code>column</code>语句中<code>other_var</code>要写在<code>new_var</code>的前面。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token comment">/*输出中添加计算变量的格式*/</span>
+<span class="token keyword keyword-DEFINE">DEFINE</span> new_var_name <span class="token operator">/</span> <span class="token keyword keyword-COMPUTED">COMPUTED</span><span class="token punctuation">;</span>    <span class="token comment">/*计算块中的新变量，必须添加computed选项*/</span>
+<span class="token keyword keyword-COMPUTE">COMPUTE</span> new_var_name <span class="token operator">/</span> <span class="token keyword keyword-options">options</span><span class="token punctuation">;</span>
+    statements<span class="token punctuation">;</span>                    <span class="token comment">/*可以是：赋值语句、IF语句、DO循环语句*/</span>
+<span class="token keyword keyword-ENDCOMP">ENDCOMP</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">/*
+***计算数值变量***
+！！！在COMPUTE语句中定义其变量名
+！！！如果用到分析(ANALYSIS)角色变量，则必须将其对应的统计量(默认SUM)放在变量名后。
+下面语句生成一个数值计算变量Income，其值为Salary和Bonus的总和。
+*/</span>
+<span class="token keyword keyword-DEFINE">DEFINE</span> Income <span class="token operator">/</span> <span class="token keyword keyword-COMPUTED">COMPUTED</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-COMPUTE">COMPUTE</span> Income<span class="token punctuation">;</span>
+    Income <span class="token operator">=</span> Salary<span class="token punctuation">.</span>SUM <span class="token operator">+</span> Bonus<span class="token punctuation">.</span>SUM<span class="token punctuation">;</span>
+<span class="token keyword keyword-ENDCOMP">ENDCOMP</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">/*
+***计算字符变量***
+！！！在COMPUTE语句中添加“CHAR”选项和“LENGTH”选项指定字符变量长度（1~200，默认8）。
+下面语句生成一个字符计算变量JobType。
+*/</span>
+<span class="token keyword keyword-DEFINE">DEFINE</span> JobType <span class="token operator">/</span> <span class="token keyword keyword-COMPUTED">COMPUTED</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-COMPUTE">COMPUTE</span> JobType <span class="token operator">/</span> CHAR <span class="token keyword keyword-LENGTH">LENGTH</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-Title">Title</span> <span class="token operator">=</span> <span class="token string">'Programmer'</span> <span class="token keyword keyword-THEN">THEN</span>  JobType <span class="token operator">=</span> <span class="token string">'Technical'</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-ELSE">ELSE</span> JobType <span class="token operator">=</span> <span class="token string">'Other'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ENDCOMP">ENDCOMP</span><span class="token punctuation">;</span>
+
+</code></pre></li>
+</ol>
+</li>
+</ul>
+<h3 id="by语句"><code>by</code>语句 </h3>
+<p>按指定的变量分多个表显示(使用前需要先排序)。</p>
+<h3 id="byvar的使用"><code>#byvar</code>的使用 </h3>
+<ul>
+<li>
+<p>用法：在proc report制作报表时，按指定变量的分类显示。</p>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code>#<span class="token function keyword">byval</span><span class="token punctuation">(</span>variable<span class="token operator">-</span>name<span class="token punctuation">)</span>
+#byval1
+#byval2
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></li>
+<li>
+<p>可以用来添加output的subtitle。</p>
+<ul>
+<li>首先用<code>proc sort</code>进行排序。</li>
+<li>排序后<code>#byvar</code>就可以你用<code>proc sort</code>的<s>by</s>变量，因此也也可以写成<code>#byvar(variablename)</code>。</li>
+<li>在<code>proc report</code>中同样使用目标分类显示变量。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">proc sort</span> <span class="token proc-args"><span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">sashelp.class</span> <span class="token arg keyword">out</span><span class="token operator">=</span><span class="token arg-value">temp</span><span class="token punctuation">;</span></span>
+<span class="token keyword keyword-by">by</span> sex<span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-title1">title1</span> <span class="token string">"Listing of Subject Characteristics"</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-title2">title2</span> <span class="token string">"Sex=#byval(sex)"</span><span class="token punctuation">;</span>
+<span class="token step keyword">proc report</span> <span class="token proc-args"><span class="token arg keyword">nowd</span> <span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">temp</span><span class="token punctuation">;</span></span>
+    <span class="token keyword keyword-by">by</span> sex<span class="token punctuation">;</span>
+    <span class="token keyword keyword-column">column</span> <span class="token keyword keyword-name">name</span> height weight<span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> <span class="token keyword keyword-name">name</span> <span class="token operator">/</span> <span class="token string">"Patient Name"</span> width<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> height <span class="token operator">/</span> <span class="token string">"Height"</span> width<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> weight <span class="token operator">/</span> <span class="token string">"Weight"</span> width<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+
+</code></pre></li>
+<li>
+<p>多个<code>by</code>变量的处理</p>
+<ul>
+<li>实际上多个 <code>By</code> 变量不影响，按需使用就行。</li>
+<li><code>#byval1 #byval2</code> 这个等价于<code>#byval(origin) #byval(make) ,1,2...</code>是 <code>proc sort</code> 里 <code>by</code> 变量的顺序。</li>
+<li><code>"Brand #byval2 From #byval1";</code> 这里面的写法很自由，就相当于我们日常造句，只是使用<code>#byval</code> 语法来动态替代分类变量名。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">proc sort</span> <span class="token proc-args"><span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">sashelp.cars</span> <span class="token arg keyword">out</span><span class="token operator">=</span><span class="token arg-value">cars</span><span class="token punctuation">;</span></span>
+    <span class="token keyword keyword-by">by</span> origin make<span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-title1">title1</span> <span class="token string">"The weight of Cars By Origin and Make"</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-title2">title2</span> <span class="token string">"Brand #byval2 From #byval1"</span><span class="token punctuation">;</span>
+
+<span class="token step keyword">proc report</span> <span class="token proc-args"><span class="token arg keyword">nowd</span> <span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">cars</span><span class="token punctuation">;</span></span>
+    <span class="token keyword keyword-by">by</span> origin make<span class="token punctuation">;</span>
+    <span class="token keyword keyword-column">column</span> weight<span class="token punctuation">;</span>
+    <span class="token keyword keyword-define">define</span> weight <span class="token operator">/</span> <span class="token string">"Weight"</span> width<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ul>
+<h3 id="break与rbreak语句"><code>break</code>与<code>rbreak</code>语句 </h3>
+<ul>
+<li><code>break</code>：可在指定变量的上方(before) 或下方(after) 插入一条分割线， 并显示统计量。</li>
+<li><code>rbreak</code>：指定在表格最下方或最上方插入一条分割线， 并显示统计量。</li>
+</ul>
+<pre data-role="codeBlock" data-info="batch" class="language-batch batch"><code><span class="token command"><span class="token keyword keyword-BREAK">BREAK</span> after variable/options;</span>
+<span class="token command"><span class="token keyword keyword-RBREAK">RBREAK</span> before /options;</span>
+</code></pre><p>variable：必须是分组(<code>group</code>)变量或者排序(<code>order</code>)变量。</p>
+<table>
+<thead>
+<tr>
+<th>常用选项(options)</th>
+<th>选项的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ol</td>
+<td>在指定的变量（或表格）上方显示一条单横线作为分割线</td>
+</tr>
+<tr>
+<td>ul</td>
+<td>在指定的变量（或表格）下方显示一条单横线作为分割线</td>
+</tr>
+<tr>
+<td>dol</td>
+<td>在指定的变量（或表格）上方显示一条双横线作为分割线</td>
+</tr>
+<tr>
+<td>dul</td>
+<td>在指定的变量（或表格）下方显示一条双横线作为分割线</td>
+</tr>
+<tr>
+<td>page</td>
+<td>开始新的一页</td>
+</tr>
+<tr>
+<td>summarize</td>
+<td>在指定的变量（或表格）上方或下方显示指定变量的综合统计量，如break after gender/summarize;，可分别显示男性和女性的统计量</td>
+</tr>
+<tr>
+<td>suppress</td>
+<td>当输出指定变量的综合统计量时，不显示该变量的类别名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compute语句"><code>compute</code>语句 </h3>
+<p><code>compute</code>语句有两个， 一个与跟<code>line</code>语句合用， 另一个是与<code>call define</code>语句合用。</p>
+<h4 id="line语句"><code>line</code>语句 </h4>
+<ul>
+<li>与<code>line</code>语句合用时， 创建自定义行。</li>
+</ul>
+<ol>
+<li>创建自定义行： LINE语句允许您在报告中插入自定义的文本行，这些行可以包含静态文本、变量值或计算结果。</li>
+<li>位置灵活： LINE语句可以在COMPUTE块内使用，因此可以在报告的开始、结束或特定列的计算中插入行。</li>
+<li>格式控制： 您可以使用LINE语句控制文本的对齐方式（左对齐、居中、右对齐）和样式。</li>
+<li>条件输出： 结合IF-THEN语句，LINE可以根据特定条件输出不同的文本行。</li>
+<li>多行输出： 您可以使用多个LINE语句来创建多行输出。</li>
+<li>变量引用： 在LINE语句中，您可以引用报告中的列、计算值或其他SAS变量。</li>
+</ol>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code>line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">"total: "</span> <span class="token punctuation">@</span><span class="token number">10</span> <span class="token punctuation">(</span><span class="token function keyword">put</span><span class="token punctuation">(</span>total<span class="token punctuation">,</span> dollar12<span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-if">if</span> status <span class="token operator">=</span> <span class="token string">'completed'</span> <span class="token keyword keyword-then">then</span> line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">"status: completed"</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-else">else</span> line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">"status: in progress"</span><span class="token punctuation">;</span>
+
+line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">"customer: "</span> <span class="token punctuation">@</span><span class="token number">15</span> <span class="token punctuation">(</span><span class="token function keyword">upcase</span><span class="token punctuation">(</span>customer_name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h4 id="call-define语句"><code>call define</code>语句 </h4>
+<ul>
+<li>与<code>call define</code>语句合用时，可以对表格进行修饰。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token keyword keyword-compute">compute</span> height<span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> height<span class="token operator">&gt;</span><span class="token number">175</span> <span class="token keyword keyword-then">then</span>
+    <span class="token keyword keyword-call">call</span> <span class="token keyword keyword-define">define</span>
+<span class="token keyword keyword-endcomp">endcomp</span><span class="token punctuation">;</span>
+</code></pre><h3 id="footnote显示在第一页">footnote显示在第一页 </h3>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">data</span> page_final<span class="token punctuation">;</span>
+    <span class="token keyword keyword-set">set</span> listings<span class="token punctuation">.</span><span class="token macro-variable">&amp;TFLNAME</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+    GRPX0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">/* determine page by grouping */</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token comment">/* footnote: refer to the first page */</span>
+<span class="token step keyword">proc sql</span> <span class="token proc-args"><span class="token arg keyword">noprint</span><span class="token punctuation">;</span></span><span class="token proc-sql">
+<span class="token sql language-sql">    <span class="token keyword keyword-insert">insert</span> <span class="token keyword keyword-into">into</span> page_final<span class="token punctuation">(</span>BYVAR<span class="token punctuation">,</span> GRPXPAG<span class="token punctuation">,</span> GRPX0<span class="token punctuation">)</span> <span class="token keyword keyword-values">values</span><span class="token punctuation">(</span><span class="token string">"^n"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token sql language-sql">    <span class="token keyword keyword-create">create</span> <span class="token keyword keyword-table">table</span> final_all <span class="token keyword keyword-as">as</span>
+        <span class="token keyword keyword-select">select</span> <span class="token operator">*</span>
+        <span class="token keyword keyword-from">from</span> page_final
+        <span class="token keyword keyword-order">order</span> <span class="token keyword keyword-by">by</span> GRPX0<span class="token punctuation">,</span> GRPX1<span class="token punctuation">,</span> GRPX2<span class="token punctuation">,</span> GRPX3<span class="token punctuation">,</span> GRPX4<span class="token punctuation">,</span> GRPX5<span class="token punctuation">,</span> GRPX6<span class="token punctuation">,</span> GRPX7<span class="token punctuation">;</span></span>
+</span><span class="token step keyword">quit</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-ods">ods</span> escapechar<span class="token operator">=</span><span class="token string">"~"</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> listing <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> rtf <span class="token keyword keyword-file">file</span><span class="token operator">=</span><span class="token string">"&amp;_olistings.&amp;TFLNAME..rtf"</span> style<span class="token operator">=</span>global<span class="token punctuation">.</span>rtf operator<span class="token operator">=</span><span class="token string">"~{\dntblnsbdb}"</span><span class="token punctuation">;</span>
+<span class="token macro-keyword keyword">%do</span> i<span class="token operator">=</span><span class="token number">0</span> <span class="token macro-keyword keyword">%to</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token step keyword">data</span> final_out<span class="token punctuation">;</span>
+        <span class="token keyword keyword-set">set</span> final_all<span class="token punctuation">;</span>
+        <span class="token keyword keyword-where">where</span> GRPX0<span class="token operator">=</span><span class="token macro-variable">&amp;i</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+    <span class="token step keyword">run</span><span class="token punctuation">;</span>
+    <span class="token macro-keyword keyword">%if</span> <span class="token macro-variable">&amp;i</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-title6">title6</span> j<span class="token operator">=</span>c <span class="token string">" "</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-title7">title7</span> j<span class="token operator">=</span>l <span class="token string">"#byval3"</span><span class="token punctuation">;</span>
+    <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+    <span class="token step keyword">proc report</span> <span class="token keyword keyword-data">data</span><span class="token operator">=</span>final_out <span class="token keyword keyword-nowd">nowd</span> split<span class="token operator">=</span><span class="token string">"~"</span> <span class="token keyword keyword-headline">headline</span> <span class="token keyword keyword-headskip">headskip</span> missing spacing<span class="token operator">=</span><span class="token number">1</span>
+            <span class="token function keyword">style</span><span class="token punctuation">(</span>report<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span>protectspecialchars <span class="token operator">=</span> off asis <span class="token operator">=</span> on<span class="token punctuation">]</span>
+            <span class="token function keyword">style</span><span class="token punctuation">(</span>header<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span>just<span class="token operator">=</span>l protectspecialchars<span class="token operator">=</span>off asis<span class="token operator">=</span>on<span class="token punctuation">]</span>
+            <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span>just<span class="token operator">=</span>l protectspecialchars<span class="token operator">=</span>off asis<span class="token operator">=</span>on<span class="token punctuation">]</span>
+            <span class="token function keyword">style</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span>  <span class="token operator">=</span> <span class="token punctuation">[</span>outputwidth<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">%</span> protectspecialchars<span class="token operator">=</span>off asis<span class="token operator">=</span>on<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%if</span> <span class="token macro-variable">&amp;i</span> <span class="token operator">=</span> <span class="token number">0</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-column">column</span> GRPXPAG GRPX0 GRPX1 GRPX2 GRPX3<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPXPAG <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX0 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX1 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX2 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX3 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%else</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-column">column</span> GRPXPAG GRPX1 GRPX2 BYVAR GRPX3 COL1<span class="token operator">-</span>COL5<span class="token punctuation">;</span>
+                <span class="token keyword keyword-by">by</span> GRPX1 GRPX2 BYVAR<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPXPAG <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> BYVAR <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX1 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX2 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> GRPX3 <span class="token operator">/</span> order noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> COL1 <span class="token operator">/</span> order flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> COL2 <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> COL3 <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> COL4 <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-define">define</span> COL5 <span class="token operator">/</span> display flow <span class="token function keyword">style</span><span class="token punctuation">(</span>column<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">[</span>cellwidth<span class="token operator">=</span><span class="token number">19</span><span class="token punctuation">%</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+        break <span class="token keyword keyword-after">after</span> GRPXPAG <span class="token operator">/</span> page<span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%if</span> <span class="token macro-variable">&amp;i</span><span class="token punctuation">.</span><span class="token operator">=</span><span class="token number">0</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-compute">compute</span> before GRPX3<span class="token operator">/</span>style<span class="token operator">=</span><span class="token punctuation">{</span>just<span class="token operator">=</span>l<span class="token punctuation">}</span><span class="token punctuation">;</span>
+                line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+                line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">"ADJ=adjudication, AE=adverse event, AESI=adverse event of special interest, Disc=discontinuation, F=female, M=male,"</span><span class="token punctuation">;</span>
+                line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">"N=no, Rel=related, SAE=serious adverse event, SEV=severity, TEAE=treatment-emergent adverse event, Y=yes, yrs=years."</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-endcomp">endcomp</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%else</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-compute">compute</span> before GRPX3<span class="token punctuation">;</span>
+                line <span class="token punctuation">@</span><span class="token number">1</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-endcomp">endcomp</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+    <span class="token step keyword">run</span><span class="token punctuation">;</span>
+<span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> rtf <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> listing<span class="token punctuation">;</span>
+</code></pre><h2 id="proc-transpose过程"><code>proc transpose</code>过程 </h2>
+<h3 id="过程步选项说明">过程步选项说明 </h3>
+<ul>
+<li><code>out=</code> 转置后的sas数据集，省略时sas系统产生一个名子为datan的数据集。</li>
+<li><code>prefix=</code> 规定转置后数据集变量名的前缀。</li>
+<li><code>name=</code> 规定转置后数据集中的一个变量名（指的是<code>var</code>中的变量），省略时该变量名为<code>_name_</code>。</li>
+<li><code>label=</code> 规定转置后变量的标签，省略该选项，且原数据集中至少有一个要转置的变量有标签时，该变量标签为<code>_label_</code>。</li>
+<li><code>let</code> 允许id变量出现相同的值。by组内最后一个id值的观测被转置。</li>
+</ul>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">proc transpose</span> <span class="token proc-args">&lt;<span class="token arg keyword">data</span><span class="token operator">=</span><span class="token arg-value">in</span>-<span class="token arg keyword">dataset</span>&gt; &lt;<span class="token arg keyword">label</span><span class="token operator">=</span><span class="token arg-value">label</span>&gt; &lt;<span class="token arg keyword">let</span>&gt;
+&lt;<span class="token arg keyword">name</span><span class="token operator">=</span><span class="token arg-value">name</span>&gt; &lt;<span class="token arg keyword">out</span><span class="token operator">=</span><span class="token arg-value">out</span>-<span class="token arg keyword">dataset</span>&gt; &lt;<span class="token arg keyword">prefix</span><span class="token operator">=</span><span class="token arg-value">prefix</span>&gt;<span class="token punctuation">;</span></span>
+    <span class="token keyword keyword-by">by</span> <span class="token operator">&lt;</span>descending<span class="token operator">&gt;</span> variable<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>descending<span class="token operator">&gt;</span> variable<span class="token operator">-</span>n<span class="token operator">&gt;</span> <span class="token punctuation">;</span>
+    copy <span class="token function keyword">variables</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    id variable<span class="token punctuation">;</span>
+    idlabel variable<span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> <span class="token function keyword">variable</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+</code></pre><h3 id="byidvaridlabel语句"><code>by</code>/<code>id</code>/<code>var</code>/<code>idlabel</code>语句 </h3>
+<ol>
+<li><code>by</code>语句
+<ul>
+<li>规定对每个<code>by</code>组求转置，<code>by</code>变量包含在输出数据集中但没有被转置。</li>
+<li>省略<code>by</code>语句时，对全部观测进行转置。</li>
+</ul>
+</li>
+<li><code>var</code>语句
+<ul>
+<li><code>var</code>语句列出要转置的变量。</li>
+<li>省略<code>var</code>语句时，则没有列在其它语句里的所有数值变量被转置。</li>
+</ul>
+</li>
+<li><code>id</code>语句
+<ul>
+<li><code>id</code>语句规定输入数据集中1个变量的值为转置后数据集的变量名。</li>
+<li>在没有选项<code>let</code>时，<code>id</code>变量的值在数据集中只能出现一次，使用<code>by</code>语句，<code>by</code>组内只包含最后的<code>id</code>值。</li>
+<li>省略<code>id</code>语句时，以<code>col1, col2,…</code>作为转置后的变量名。</li>
+</ul>
+</li>
+<li><code>idlabel</code>语句
+<ul>
+<li>为转置后的变量创建标签。</li>
+</ul>
+</li>
+</ol>
+<h2 id="proc-import过程"><code>proc import</code>过程 </h2>
+<h3 id="常用选项介绍">常用选项介绍 </h3>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">proc import</span>
+    <span class="token proc-args"><span class="token arg keyword">datafile</span><span class="token operator">=</span><span class="token string">"filename"</span> | <span class="token arg keyword">datatable</span><span class="token operator">=</span><span class="token string">"tablename"</span> <span class="token punctuation">(</span><span class="token arg keyword">not</span> <span class="token arg keyword">used</span> <span class="token arg keyword">for</span> <span class="token arg keyword">microsoft</span> <span class="token arg keyword">excel</span> <span class="token arg keyword">files</span><span class="token punctuation">)</span>
+    &lt;<span class="token arg keyword">dbms</span><span class="token operator">=</span><span class="token arg-value">data</span>-<span class="token arg keyword">source</span>-<span class="token arg keyword">identifier</span>&gt;
+    &lt;<span class="token arg keyword">out</span><span class="token operator">=</span><span class="token arg-value">libref.sas</span> <span class="token arg keyword">data</span>-<span class="token arg keyword">set</span>-<span class="token arg keyword">name</span>&gt; &lt;<span class="token arg keyword">sas</span> <span class="token arg keyword">data</span>-<span class="token arg keyword">set</span>-<span class="token function keyword">option</span><span class="token punctuation">(</span><span class="token arg keyword">s</span><span class="token punctuation">)</span>&gt;
+    &lt;<span class="token arg keyword">replace</span><span class="token punctuation">;</span></span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>file<span class="token operator">-</span>format<span class="token operator">-</span>specific<span class="token operator">-</span>statements<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li><code>datafile</code>|<code>datatable</code>：读取的数据地址，唯一的必填选项。<code>datafile</code>可以用别名file代替，<code>datatable</code>可以用别名table代替。</li>
+<li><code>out=</code>：输出数据集名。</li>
+<li><code>replace</code>：如果数据集已经存在，是否替换。</li>
+<li><code>delimiter=</code>：
+<ul>
+<li>用于指定文件的分隔符；如果不指定，默认的分割符为空格。</li>
+<li>csv即逗号分割值的文件：指定<code>dbms=dlm</code>, <code>delimiter=','</code> ；也可以直接指定<code>dbms=csv</code>。</li>
+</ul>
+</li>
+<li><code>dbms=</code> 导入的数据的类型，参考如下标识符。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标识符</th>
+<th>源数据格式</th>
+<th>文件扩展名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CSV</code></td>
+<td>Delimited file (comma-separated values)</td>
+<td>.csv</td>
+</tr>
+<tr>
+<td><code>DLM</code></td>
+<td>Delimited file (default delimiter is a blank)</td>
+<td>.dat or .txt</td>
+</tr>
+<tr>
+<td><code>JMP</code></td>
+<td>JMP files, Version 7 or later format</td>
+<td>.jmp</td>
+</tr>
+<tr>
+<td><code>TAB</code></td>
+<td>Delimited file (tab-delimited values)</td>
+<td>.txt</td>
+</tr>
+<tr>
+<td><code>EXCEL</code></td>
+<td>Microsoft Excel 97, 2000, 2002, 2003, or 2007 spreadsheet using the LIBNAME statement.</td>
+<td>.xls .xlsb .xlsm .xlsx</td>
+</tr>
+<tr>
+<td><code>XLS</code></td>
+<td>Microsoft Excel 5.0, 95, 97, 2000, 2002, or 2003 spreadsheet using file formats</td>
+<td>.xls</td>
+</tr>
+<tr>
+<td><code>ACCESS</code></td>
+<td>Microsoft Access 2000, 2002, 2003, or 2007 table using the LIBNAME statement.</td>
+<td>.mdb .accdb</td>
+</tr>
+<tr>
+<td><code>DTA</code></td>
+<td>Stata file</td>
+<td>.dta</td>
+</tr>
+<tr>
+<td><code>EXCEL 4</code> <code>EXCEL 5</code></td>
+<td>Microsoft Excel 4.0, Excel 5.0 or 7.0 (95) spreadsheet.</td>
+<td>.xls</td>
+</tr>
+<tr>
+<td><code>EXCELCS</code></td>
+<td>Microsoft Excel spreadsheet connecting remotely through PC Files Server.</td>
+<td>.xls  .xlsb</td>
+</tr>
+<tr>
+<td><code>SAV</code></td>
+<td>SPSS file</td>
+<td>.sav</td>
+</tr>
+<tr>
+<td><code>TAB</code></td>
+<td>Delimited file (tab-delimited values)</td>
+<td>.txt</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proc-import常用语句"><code>proc import</code>常用语句 </h3>
+<ul>
+<li><code>getnames=yes|no;</code>语句：对于Excel文档，以第一行为变量名。</li>
+<li><code>sheet=sheet-name;</code>语句：对于Excel文档，指定文档中sheet的名字。</li>
+<li><code>range = '$A1:H10';</code>语句：若只读取工作表的一部分范围。</li>
+<li><code>mixed=yes|no;</code>语句：若同时有字符和数值型，不将数值型转换为缺失值而是处理为字符型; 使用mixed之后，日期也会被当作字符处理。</li>
+<li><code>datarow=n;</code>语句：指定开始读取的行号，从第几行开始读取数据。</li>
+</ul>
+
       </div>
       <div class="md-sidebar-toc">
 <div class="md-toc">
@@ -2003,7 +3322,7 @@ person    65   HIGH    senior  Y        N     H
           </a></div>
         </div>
       </details>
-
+    
         </div>
       </details>
     <details style="padding:0;;padding-left:24px;" open="">
@@ -2065,6 +3384,64 @@ person    65   HIGH    senior  Y        N     H
             <p><code>attrib</code>语句</p>
 
           </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#正则表达式" class="md-toc-link"><p>正则表达式</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#模式匹配" class="md-toc-link">
+            <p>模式匹配</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#基本语法" class="md-toc-link"><p>基本语法</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#正则表达式的构成" class="md-toc-link">
+            <p>正则表达式的构成</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#reg基本语法" class="md-toc-link">
+            <p>reg基本语法</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sas中的基本函数" class="md-toc-link">
+            <p>SAS中的基本函数</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#一般元字符" class="md-toc-link">
+            <p>一般元字符</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#元字符分组" class="md-toc-link">
+            <p>元字符分组</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#前向搜索和后向搜索断言" class="md-toc-link">
+            <p>前向搜索和后向搜索【断言】</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#注释和内联修饰符" class="md-toc-link">
+            <p>注释和内联修饰符</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#表达式的组合" class="md-toc-link">
+            <p>表达式的组合</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#常用正则" class="md-toc-link">
+            <p>常用正则</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">
           <a href="#length语句" class="md-toc-link"><p><code>length</code>语句</p>
 </a>
@@ -2198,7 +3575,7 @@ person    65   HIGH    senior  Y        N     H
           </a></div>
         </div>
       </details>
-
+    
         </div>
       </details>
     <details style="padding:0;;padding-left:24px;" open="">
@@ -2416,25 +3793,138 @@ person    65   HIGH    senior  Y        N     H
           </a></div>
         </div>
       </details>
-
+    
         </div>
       </details>
-
+    
         </div>
       </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#proc-report过程" class="md-toc-link"><p><code>proc report</code>过程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#基本语句" class="md-toc-link">
+            <p>基本语句</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ods语句相关说明" class="md-toc-link">
+            <p><code>ods</code>语句相关说明</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#过程步options" class="md-toc-link">
+            <p>过程步options</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#column语句" class="md-toc-link"><p><code>column</code>语句</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#基本原则" class="md-toc-link">
+            <p>基本原则</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#多层表头" class="md-toc-link">
+            <p>多层表头</p>
+
+          </a></div>
         </div>
       </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#where语句" class="md-toc-link">
+            <p><code>where</code>语句</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#define语句" class="md-toc-link">
+            <p><code>define</code>语句</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#by语句" class="md-toc-link">
+            <p><code>by</code>语句</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#byvar的使用" class="md-toc-link">
+            <p><code>#byvar</code>的使用</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#break与rbreak语句" class="md-toc-link">
+            <p><code>break</code>与<code>rbreak</code>语句</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#compute语句" class="md-toc-link"><p><code>compute</code>语句</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#line语句" class="md-toc-link">
+            <p><code>line</code>语句</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#call-define语句" class="md-toc-link">
+            <p><code>call define</code>语句</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#footnote显示在第一页" class="md-toc-link">
+            <p>footnote显示在第一页</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#proc-transpose过程" class="md-toc-link"><p><code>proc transpose</code>过程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#过程步选项说明" class="md-toc-link">
+            <p>过程步选项说明</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#byidvaridlabel语句" class="md-toc-link">
+            <p><code>by</code>/<code>id</code>/<code>var</code>/<code>idlabel</code>语句</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#proc-import过程" class="md-toc-link"><p><code>proc import</code>过程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#常用选项介绍" class="md-toc-link">
+            <p>常用选项介绍</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#proc-import常用语句" class="md-toc-link">
+            <p><code>proc import</code>常用语句</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
 </div>
 </div>
       <a id="sidebar-toc-btn">≡</a>
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
 <script>
 
 var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
@@ -2447,6 +3937,6 @@ sidebarTOCBtn.addEventListener('click', function(event) {
   }
 })
 </script>
-
-
+      
+  
     </body></html>

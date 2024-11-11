@@ -1,132 +1,37 @@
 # SAS-Programmer-101
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=2 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
 - [SAS-Programmer-101](#sas-programmer-101)
   - [数据集选项执行顺序](#数据集选项执行顺序)
-    - [选项执行顺序](#选项执行顺序)
-    - [常见数据集选项](#常见数据集选项)
   - [SAS EG设置自动查log的方法](#sas-eg设置自动查log的方法)
   - [处理特殊字符与输出特殊符号](#处理特殊字符与输出特殊符号)
-    - [上/下标：`super`/`sub`](#上下标supersub)
-    - [含特殊意义的字符：`raw`](#含特殊意义的字符raw)
-    - [其他特殊字符：`unicode`](#其他特殊字符unicode)
-    - [使用unicode删除特殊字符](#使用unicode删除特殊字符)
   - [有用的系统选项](#有用的系统选项)
-    - [修改变量名命名规则](#修改变量名命名规则)
-    - [宏里面使用`in`语句的系统选项](#宏里面使用in语句的系统选项)
-    - [解决footnote太长的warning](#解决footnote太长的warning)
   - [sas数据集/逻辑库/excel的交互](#sas数据集逻辑库excel的交互)
-    - [sas数据集导出到excel](#sas数据集导出到excel)
-      - [使用`ods excel`](#使用ods-excel)
-      - [使用`ods` 导出带有template的excel](#使用ods-导出带有template的excel)
-      - [使用`proc export`](#使用proc-export)
-    - [excel导入为sas数据集](#excel导入为sas数据集)
-      - [使用`proc import`](#使用proc-import)
   - [删除宏变量的额外空格](#删除宏变量的额外空格)
-    - [方法：`separated by ''`](#方法separated-by-)
-    - [方法：`trimmed`](#方法trimmed)
-    - [方法：`%let`](#方法let)
   - [掩码宏函数](#掩码宏函数)
-    - [`%str`与`%nrstr`](#str与nrstr)
-    - [`%quote`和`%nrquote`](#quote和nrquote)
-    - [`%bquote`和`%nrbquote`](#bquote和nrbquote)
-    - [`%superq`](#superq)
-    - [`%unquote`](#unquote)
-    - [具有掩码作用的宏函数](#具有掩码作用的宏函数)
   - [`attrib`语句](#attrib语句)
+  - [正则表达式](#正则表达式)
   - [`length`语句](#length语句)
-    - [使用说明](#使用说明)
-    - [注意事项](#注意事项)
   - [`retain`语句](#retain语句)
-    - [`retain`使用说明](#retain使用说明)
-    - [`retain`注意事项](#retain注意事项)
-    - [案例：使用`retain`前向填充缺失值](#案例使用retain前向填充缺失值)
-    - [案例：使用`retain`给数据加序号](#案例使用retain给数据加序号)
-    - [案例：`set`语句自动`retain`变量](#案例set语句自动retain变量)
   - [`set`语句](#set语句)
-    - [`set`使用说明](#set使用说明)
-    - [一个`set`语句中多个数据集](#一个set语句中多个数据集)
-    - [多个`set`语句中一个数据集](#多个set语句中一个数据集)
-    - [选项：`point=Variable`](#选项pointvariable)
-    - [选项：`nobs=Variable`](#选项nobsvariable)
-    - [选项：`end=Variable`](#选项endvariable)
   - [`merge`语句](#merge语句)
-    - [没有`by`语句的`merge`](#没有by语句的merge)
-    - [使用`by`语句的`merge`](#使用by语句的merge)
-    - [多表查询](#多表查询)
-      - [笛卡尔积：两个表所有可能的](#笛卡尔积两个表所有可能的)
-      - [内联接：两个表共有的数据](#内联接两个表共有的数据)
-      - [左连接：匹配后保留左表所有数据，左表顺序保持不变](#左连接匹配后保留左表所有数据左表顺序保持不变)
-      - [左连接：只保留左表独有的数据](#左连接只保留左表独有的数据)
-      - [右连接：匹配后保留右表所有数据，右表顺序保持不变](#右连接匹配后保留右表所有数据右表顺序保持不变)
-      - [右连接：只保留右表独有的数据](#右连接只保留右表独有的数据)
-      - [全连接：两个表的匹配数据及未匹配的数据](#全连接两个表的匹配数据及未匹配的数据)
-      - [全连接：两个表各自的独有数据](#全连接两个表各自的独有数据)
   - [`array`语句](#array语句)
-    - [`array`使用说明](#array使用说明)
-    - [通过下标引用数组元素](#通过下标引用数组元素)
-    - [使用`do`循环遍历数组元素](#使用do循环遍历数组元素)
-    - [使用`of`运算符处理所有元素](#使用of运算符处理所有元素)
-    - [`in`运算符访问数组元素的值](#in运算符访问数组元素的值)
-    - [不同数组间的判断](#不同数组间的判断)
   - [`select-when`语句](#select-when语句)
-    - [`select-when`使用说明](#select-when使用说明)
-    - [案例: 简单的单变量判断](#案例-简单的单变量判断)
-    - [案例: 使用`do-end`执行复杂语句组](#案例-使用do-end执行复杂语句组)
-    - [案例: 在`when`中使用复合表达式](#案例-在when中使用复合表达式)
   - [`continue`与`leave`语句](#continue与leave语句)
-    - [`continue`与`leave`使用说明](#continue与leave使用说明)
-    - [案例：使用`continue`跳过当前循环](#案例使用continue跳过当前循环)
-    - [案例：使用leave跳出整个循环](#案例使用leave跳出整个循环)
   - [`link`与`goto`语句](#link与goto语句)
-    - [`link`与`goto`使用说明](#link与goto使用说明)
-    - [案例：使用`goto`转到指定语句](#案例使用goto转到指定语句)
-    - [案例：使用带return语句的`link`](#案例使用带return语句的link)
   - [`output`与`return`语句](#output与return语句)
-    - [`output`与`return`使用说明](#output与return使用说明)
-    - [案例：使用`return`停止后续语句](#案例使用return停止后续语句)
-    - [案例：使用将不同的观测数据输出到同一行](#案例使用将不同的观测数据输出到同一行)
   - [`proc sort`过程](#proc-sort过程)
-    - [`proc sort`使用说明](#proc-sort使用说明)
-    - [只保留没有重复的观测](#只保留没有重复的观测)
-    - [对数据集进行去重](#对数据集进行去重)
-    - [获取数据集中重复的观测](#获取数据集中重复的观测)
-    - [使用`key`语句对整体变量设置倒序](#使用key语句对整体变量设置倒序)
   - [`proc format`过程](#proc-format过程)
-    - [`proc format`使用说明](#proc-format使用说明)
-    - [设置format的范围值](#设置format的范围值)
-    - [使用`(default=n)`选项处理format截断](#使用defaultn选项处理format截断)
-    - [使用`(fuzz=.n)`选项设置模糊format](#使用fuzzn选项设置模糊format)
-    - [定义`picure`的数值模板](#定义picure的数值模板)
-    - [对`picture`数值模板保留小数](#对picture数值模板保留小数)
-    - [定义描述统计的输出模板](#定义描述统计的输出模板)
-    - [`picuture`进行`round`的Bug处理](#picuture进行round的bug处理)
-    - [`format`与数据集的传输](#format与数据集的传输)
-      - [数据集转为`format`](#数据集转为format)
-      - [`format`转为数据集](#format转为数据集)
-        - [常规`format`转为数据集](#常规format转为数据集)
-        - [带有端点值和无限范围的`format`转为数据集](#带有端点值和无限范围的format转为数据集)
   - [`proc report`过程](#proc-report过程)
-    - [基本语句](#基本语句)
-    - [`ods`语句相关说明](#ods语句相关说明)
-    - [过程步options](#过程步options)
-    - [`column`语句](#column语句)
-      - [基本原则](#基本原则)
-      - [多层表头](#多层表头)
-    - [`where`语句](#where语句)
-    - [`define`语句](#define语句)
-    - [`by`语句](#by语句)
-    - [`#byvar`的使用](#byvar的使用)
-    - [`break`与`rbreak`语句](#break与rbreak语句)
-    - [`compute`语句](#compute语句)
-      - [`line`语句](#line语句)
-      - [`call define`语句](#call-define语句)
-    - [footnote显示在第一页](#footnote显示在第一页)
+  - [`proc transpose`过程](#proc-transpose过程)
+  - [`proc import`过程](#proc-import过程)
 
 <!-- /code_chunk_output -->
+
+---
 
 ## 数据集选项执行顺序
 
@@ -527,7 +432,7 @@ run;
 
 1. 利用`attrib`删去所有`label`
 
-   ```c-like
+   ```sas
    data want;
        set have;
        attrib _all_ label="";
@@ -542,6 +447,195 @@ run;
    attrib x length=$4 label='TEST VARIABLE' y length=$2 label='RESPONSE';
    attrib month1-month12 label='MONTHLY SALES';
    ```
+
+## 正则表达式
+
+### 模式匹配
+
+- 模式匹配能够在一个步骤中从字符串中搜索和提取多个匹配模式。
+- 模式匹配还允许在一个步骤中对字符串进行多次替换。
+- 可以在源文件中搜索字符串并返回匹配的位置。
+- SAS中的模式匹配可以通过Perl正则表达函数和CALL例程来实现。
+
+### 基本语法
+
+#### 正则表达式的构成
+
+- Perl正则表达式由**字符**和称为**元字符**的特殊字符组成。
+- 在执行匹配时，SAS将在源字符串中搜索您指定的Perl正则表达式匹配的子字符串。
+- 使用元字符使SAS能够执行某些特殊操作。这些操作包括强制匹配从特定位置开始，并匹配特定的一组字符。
+
+#### reg基本语法
+
+- 分隔符：
+  - `"/regular-expression/"`：成对的正斜杠是默认的分隔符。
+- 搜寻：
+  - `res = prxmatch("/world/", "Hello world!");`
+- 替换：
+
+  ```sas
+  data x;
+      res = prxchange("s/world/planet/", 2, "Hello world world world");
+  run;
+  proc print;
+  run;
+  /*  结果为： Hello planet planet world */
+  ```
+
+- 解释：
+  1. "`s/world/planet/`"， 由3部分组成，**`s`**指定待替换的元字母， `world`为正则表达式， `planet`为新值，即满足正则表达式的内容替换为`planet`
+  2. `2`， 指定替换次数，2表示替换前2次，`-1`表示全部替换
+  3. `Hello world world world`， 被匹配字符串
+
+### SAS中的基本函数
+
+|Function(Args)|Description|
+|-|-|
+|`prxparse(regx)`|以正则式作为输入，输出SAS中指定替代该正则式的`id(regx_id)`|
+|`prxmatch(regx/regx_id, string)`|以正则表达式或者正则表达式id以及被匹配对象作为输入。 返回首次匹配到的开始位置，匹配失败返回0|
+|`prxposn(rex_id,rnk, start,length)`|来获取需要的反向匹配结果。 输入为4个参数：第一个为正则式id，第二个是方向匹配的序号，第三个和第四个是输出参数，函数执行结束它们会被赋值为反向匹配在原匹配字符串中的位置和长度；这样，利用这两个返回的值并结合substr就可以得到反向匹配字符串|
+|`prxposn(regx_id,rnk,string)`|返回子表达式对应的匹配值，注意子表达式含义|
+|`prxchange(regx/regx_id,oldstring,newstring,length,trunk,num)`|替换匹配模式的值|
+|`prxsubstr(regx/regx_id,string,start,length)`|返回首次匹配的位置和长度，匹配失败，则start为0|
+|`prxnext(regx/regx_id,start,stop,string,position,length)`|返回多个匹配位置和长度|
+
+### 一般元字符
+
+|Meta-Character|Description|Example|
+|-|-|-|
+|`non-metacharacter`|非"元字符",也可以理解为非特殊字符，即没有特殊意义的字符。|`"/abc/"` 表示匹配包含"*abc*"的字符串|
+|`^`|在字符串的开始匹配|`^cat`  匹配"cat"，"cats"但不匹配"the cat"|
+|`$`|在字符串的结尾匹配|`cat$`  匹配"the cat" 但不匹配"cat in the hat"|
+|`\|`|指定or条件|`"sas\|java"` 可以同时匹配"sas"和"java"|
+|`.`|匹配除换行符"\n"之外的任何单个字符|`r.n` 匹配"ron"，"run"，"ran" `".*"` 可以匹配所有字符串 `[.\n]`  匹配任意字符|
+|`*`|匹配前字符0次或多次（进行贪婪匹配）|`cat*`  匹配"cat"，"cats" `c(at)*` 匹配"c", "cat", "catatat" `a.*b` 匹配"aabab"|
+|`+`|匹配前字符1次或多次（进行贪婪匹配）|`\d+` 匹配一个或多个数字|
+|`?`|匹配前字符0次或1次（进行贪婪匹配）|`hello?` 匹配"hell"，"hello"|
+|`*?`|匹配0次或多次（进行懒惰匹配,匹配到第一个就结束匹配了，不会继续先后匹配）|`a.*?b`匹配"aabab"中的"aab"|
+|`+?`|匹配1次或多次（进行懒惰匹配）||
+|`?`|匹配0次或1次（进行懒惰匹配）||
+|`{n}?`|精确匹配n次（进行懒惰匹配）||
+|`{n,}?`|匹配至少n次（进行懒惰匹配）||
+|`{n,m}?`|匹配至少n次，不超过m次（进行懒惰匹配）||
+|`{n}`|匹配n次（进行懒惰匹配）||
+|`{n,}`|匹配至少n次（进行懒惰匹配）||
+|`{n,m}`|匹配n到m次（进行懒惰匹配）||
+|**分组**|||
+|`( )`|表示一个分组。|`"/(abc)(def)/"` "*abc*"表示组1，"*def*"表示组2|
+|`[...]`|匹配中括号内的任一字符||
+|`[^....]`|不匹配中括号内的任何字符||
+|`[a-z]`|匹配a到z范围内的任一字符||
+|`[^a-z]`|不匹配a到z范围内的任何字符||
+||||
+|`(?:...)`|指定一个非捕获组|"()"的字符中以"?"开头的话这些元素将不能被认定为一组字符，这一写法常常用于断言|
+|`{ }` `[ ]` `( )` `^` `$` `.` `\|` `*` `+` `?` `\`|这个字符串在正则表达式中具有一些特殊含义，若想匹配，则需要在前面加上"\\"。|`"/\\/"` 表示匹配包含"\\"的字符串，其他符号同理|
+|**转义**|||
+|`\`|这个字符是正则表达式的基本字符，它使下一个出现的字符被赋予特殊含义。|`"/\d/"` 这个表达并非表示匹配字符"d", 而需要将"\d"看为一个整体，表示一个数字|
+|`\1` `\2` `\3` `\n`|n是一个具体的数字，代表匹配捕捉缓存区n中的数据，缓存区n可以理解成组n|`"/(abc)(def) \1\2/"` "\1"可以代表组1中被缓存的"abc"字符串，"\2"可以代表"def"字符串，这样我可以就可以将要写的表达式"/(abc)(def)(abc)(def)/"简化成前方的写法|
+|`\a`|警示字符，指代ASCII编码为7的字符|不常用|
+|`\A`|匹配字符串中首个字符，一般用于在开头插入字符串|`prxchange("s/\A/start/",-1,"adc")`结果是"startadc"|
+|`\b`|匹配一个字符边界|`"er\b"`  匹配 了"never"中的"er" 字符串 , 但并不匹配"verb" 中的"er"|
+|`\B`|匹配一个非字符边界|和上面"\b"的例子会是相反的结果|
+|`\cA-\cZ`|匹配一个控制字符， 控制字符都是非打印的字符|不常用|
+|`\C`|匹配一个单字节的字符|不常用|
+|`\d`|匹配一个数字，即0-9|`"/\d/"` 匹配0-9中的任何一个|
+|`\D`|匹配一个非数字，即除了0-9中的任何一个字符|`"/\D/"` 匹配除了0-9中的任何一个字符|
+|`\e`|匹配一个转义字符|“\n”换行符，”\r”回车符都属于转义字符|
+|`\E`|指代的是字符大小写修饰符|prxchange(“s/\E/-/“,-1,”adcEFG”) 输出的结果”-a-d-c-E-F-G-“|
+|`\f`|匹配一个换页符|不常用|
+|`\l`|申明下一个字符为小写|“\lABC” 可以匹配”aBC”|
+|`\L`|申明下一个字符的\E元素是小写的|不常用|
+|`\n`|n是字母n，代表换行符|可以匹配换行符|
+|`\num`|num是一个数字，代表组num的缓存区, 在匹配时使用|`"/(abc)\1/"`, 中"\1"可以代表组1中被缓存的"abc"字符串|
+|`$num`|num是一个数字，代表组num的缓存区, 在替换时使用|`prxchange("s/(abc)(def)/$1/",-1,"abcdef")` 结果是"abc"|
+|`\Q`|转义所有非文本字符|`"\Q\%"` 可以匹配"\%"|
+|`\r`|匹配一个回车符|回车符|
+|`\s`|匹配一个空格，包括空格，tab键，分页符和其他空格|`\s` 等于[\f\n\r\t\v]|
+|`\S`|匹配一个非空格|\S就等于除了[\f\n\r\t\v]之外的所有字符|
+|`\t`|匹配一个tab字符|相当于电脑上tab键的效果|
+|`\u`|申明下一个字符为大写|`"\uabc"` 可以匹配"Abc"|
+|`\U`|申明下一个字符的\E元素是大写的|不常用|
+|`\v or \x0B`|垂直空白格|非常规空格的一种|
+|`\w`|匹配字母，数字和下划线，即sas变量命名规则|`"\w+"`匹配"abc123_"|
+|`\W`|匹配除了字母，数字和下划线的所有字符|`"\W+"` 可以匹配" 你好"|
+|`\ddd`|d为8进制数字，匹配一个8进制的字符|不常用|
+|`\xdd`|d为16进制数字，匹配一个16进制的字符|不常用|
+|`\z`|匹配字符串中最后字符，一般用于在最后插入字符串|`prxchange("s/\z/end/",-1,"adc")` 结果会是"adcend"|
+|`\Z`|匹配字符串中最后字符, 若最后是换行符，则匹配换行符前的字符|可以理解为段落前的最后一个可见字符|
+
+### 元字符分组
+
+| **元字符**                        | **描述**             |
+| ------------------------------ | ------------------ |
+| \[...]                         | 匹配中括号内的任一字符        |
+| \[^....]                       | 不匹配中括号内的任何字符       |
+| \[a-z]                         | 匹配a到z范围内的任一字符      |
+| \[^a-z]                        | 不匹配a到z范围内的任何字符     |
+| \[\[:alpha:]]、\[\[:^alpha:]]   | 匹配或不匹配字母字符         |
+| \[\[:alnum:]]、\[\[:^alnum:]]   | 匹配或不匹配字母数值字符       |
+| \[\[:ascii:]]、\[\[^:ascii:]]   | 匹配ASCII字符或非ASCII字符 |
+| \[\[:blank:]]、\[\[^:blank:]]   | 匹配空白或非空白字符         |
+| \[\[:cntrl:]]、\[\[^:cntrl:]]   | 匹配控制或非控制字符         |
+| \[\[:digit:]]、\[\[^:digit:]]   | 匹配数字或非数字字符         |
+| \[\[:graph:]]、\[\[^:graph:]]   | 匹配可见字符（排除空格），或相反   |
+| \[\[:lower:]]、\[\[^:lower:]]   | 匹配小写字符，或相反         |
+| \[\[:print:]]、\[\[^:print:]]   | 匹配可打印字符，或相反        |
+| \[\[:punct:]]、\[\[^:punct:]]   | 匹配标点符号，或相反         |
+| \[\[:space:]]、\[\[^:space:]]   | 匹配空格或非空格           |
+| \[\[:upper:]]、\[\[^:upper:]]   | 匹配大写字符或相反          |
+| \[\[:word:]]、\[\[^:word:]]     | 匹配一个单词或相反          |
+| \[\[:xdigit:]]、\[\[^:xdigit:]] | 匹配一个十六进制字符或不匹配     |
+
+### 前向搜索和后向搜索【断言】
+
+| **元字符**   | **描述**     | **举例**                             |
+| --------- | ---------- | ---------------------------------- |
+| (？=...)   | 肯定的，向前的回顾	 | "/abc(?=A)/"匹配"abcABC"字符串中的"abc"   |
+| (？！...)   | 否定的，向前的回顾  | "/abc(?!A)/"不能匹配"abcABC"字符串中的"abc" |
+| (?<=...)  | 肯定的，向后的回顾  | "(?<=A)abc"匹配"CBAabc"字符串中的"abc"    |
+| (?\<!...) | 否定的，向后的回顾  | "(?\<!A)abc"不能匹配"CBAabc"字符串中的"abc" |
+
+### 注释和内联修饰符
+
+| **元字符**  | **描述**      |
+| -------- | ----------- |
+| (?#text) | 指定注释        |
+| (?imsx)  | 指定内嵌的模式匹配注释 |
+
+### 表达式的组合
+
+| **元字符**         | **描述**                                      |
+| --------------- | ------------------------------------------- |
+| ST              | 如果对于S来说A比A’好，那么AB就好于A'B'.                   |
+| S\|T            | 如果S能匹配，那么就比只有T能匹配时好                         |
+| S{repeat-count} | 匹配尽可能多的S                                    |
+| S{min,max}      | 匹配max次到min次S                                |
+| S{min,max}?     | 匹配min次到max次S                                |
+| S?,S\*,S+       | 匹配S{0,1}，S{0,big-number}. S{1,big-number}   |
+| S??, S\*?, S+   | 同S{0,1}？，S{0,big-number}?, S{1,big-number}？ |
+| (?=S), (?<=S)   | 考虑S的最佳匹配                                    |
+| (?!S), (?\<!S)  | 不需要描述组内操作顺序，因为只有S是否匹配是重要的                   |
+
+### 常用正则
+
+|用途|正则表达式|
+|-|-|
+|匹配中文字符 |`[\u4e00-\u9fa5]`|
+|匹配双字节字符 (包括汉字在内)|`[^\x00-\xff]` 可以用来计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）|
+|匹配空白行|`\n\s*\r` 评注：可以用来删除空白行|
+|匹配HTML标记|`<(\S*?)[^>]`*`>.`*`?</\1>\|<.*? />`仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力|
+|匹配首尾空白字符|`^\s*\|\s*$`可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式|
+|匹配Email地址|`\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)` 表单验证时很实用|
+|匹配网址URL|`[a-zA-z]+://[^\s]*` 基本可以满足需求|
+|匹配帐号是否合法 (字母开头，允许5-16字节，允许字母数字下划线)|`[a-zA-Z0-9_]{4,15}$` 表单验证时很实用|
+|匹配国内电话号码|`\d{3}-\d{8}\|\d{4}-\d{7}` 匹配形式如 0511-4405222 或 021-87888822|
+|匹配腾讯QQ号|`[1-9][0-9]{4,}` 腾讯QQ号从10000开始|
+|匹配中国邮政编码|`[1-9]\d{5}(?!\d)` 中国邮政编码为6位数字|
+|匹配身份证|`\d{15}\|\d{18}` 中国的身份证为15位或18位|
+|匹配ip地址|`\d+.\d+.\d+.\d+` 提取ip地址时有用|
+|匹配特定数字|`^\d*`匹配正整数 `^−[1−9]\d*` 匹配负整数 `^-?[1-9]\d*`匹配整数 `^[1−9]\d∗\|0` 匹配非负整数（正整数+0） `^-[1-9]\d*\|0`匹配非正整数（负整数+0） `^[1−9]\d*.\d*\|0.\d*[1−9]\d*` 匹配正浮点数 `^-([1-9]\d*.\d*\|0.\d*[1-9]\d*)`匹配负浮点数 `^−?([1−9]\d*.\d*\|0.\d*[1−9]\d*\|0?.0+\|0)`匹配浮点数 `^[1−9]\d*.\d*\|0.\d*[1−9]\d*\|0?\.0+\|0`匹配非负浮点数（正浮点数+0） `^(-([1-9]\d*.\d*\|0.\d*[1-9]\d*))\|0?\.0+\|0`匹配非正浮点数（负浮点数+0）|
+|匹配特定字符串|`^[A-Za-z]+`匹配由26个英文字母组成的字符串 `^[A-Z]+`匹配由26个英文字母的大写组成的字符串 `^[a-z]+`匹配由26个英文字母小写组成的字符串 `^[A-Za-z0-9]+`匹配由数字和26个英文字母组成的字符串 `^\w+$`匹配由数字、26个英文字母或者下划线组成的字符串|
+
 
 ## `length`语句
 
@@ -2017,7 +2111,7 @@ DEFINE variable / <option(s)>  <'column-heading'> ;
 
 - 用法：在proc report制作报表时，按指定变量的分类显示。
 
-  ```typescript
+  ```sas
   #byval(variable-name)
   #byval1
   #byval2
@@ -2194,3 +2288,84 @@ ods rtf file="&_olistings.&TFLNAME..rtf" style=global.rtf operator="~{\dntblnsbd
 ods rtf close;
 ods listing;
 ```
+
+## `proc transpose`过程
+
+### 过程步选项说明
+
+- `out=` 转置后的sas数据集，省略时sas系统产生一个名子为datan的数据集。
+- `prefix=` 规定转置后数据集变量名的前缀。
+- `name=` 规定转置后数据集中的一个变量名（指的是`var`中的变量），省略时该变量名为`_name_`。
+- `label=` 规定转置后变量的标签，省略该选项，且原数据集中至少有一个要转置的变量有标签时，该变量标签为`_label_`。
+- `let` 允许id变量出现相同的值。by组内最后一个id值的观测被转置。
+
+```sas
+proc transpose <data=in-dataset> <label=label> <let>
+<name=name> <out=out-dataset> <prefix=prefix>;
+    by <descending> variable-1 <...<descending> variable-n> ;
+    copy variables(s);
+    id variable;
+    idlabel variable;
+    var variable(s);
+run;
+```
+
+### `by`/`id`/`var`/`idlabel`语句
+
+1. `by`语句
+   - 规定对每个`by`组求转置，`by`变量包含在输出数据集中但没有被转置。
+   - 省略`by`语句时，对全部观测进行转置。
+2. `var`语句
+   - `var`语句列出要转置的变量。
+   - 省略`var`语句时，则没有列在其它语句里的所有数值变量被转置。
+3. `id`语句
+   - `id`语句规定输入数据集中1个变量的值为转置后数据集的变量名。
+   - 在没有选项`let`时，`id`变量的值在数据集中只能出现一次，使用`by`语句，`by`组内只包含最后的`id`值。
+   - 省略`id`语句时，以`col1, col2,…`作为转置后的变量名。
+4. `idlabel`语句
+   - 为转置后的变量创建标签。
+
+## `proc import`过程
+
+### 常用选项介绍
+
+```sas
+proc import
+    datafile="filename" | datatable="tablename" (not used for microsoft excel files)
+    <dbms=data-source-identifier>
+    <out=libref.sas data-set-name> <sas data-set-option(s)>
+    <replace;>
+    <file-format-specific-statements>;
+run;
+```
+
+- `datafile`|`datatable`：读取的数据地址，唯一的必填选项。`datafile`可以用别名file代替，`datatable`可以用别名table代替。
+- `out=`：输出数据集名。
+- `replace`：如果数据集已经存在，是否替换。
+- `delimiter=`：
+  - 用于指定文件的分隔符；如果不指定，默认的分割符为空格。
+  - csv即逗号分割值的文件：指定`dbms=dlm`, `delimiter=','` ；也可以直接指定`dbms=csv`。
+- `dbms=` 导入的数据的类型，参考如下标识符。
+
+|标识符|源数据格式|文件扩展名|
+|-|-|-|
+|`CSV`|Delimited file (comma-separated values)|.csv|
+|`DLM`|Delimited file (default delimiter is a blank)|.dat or .txt|
+|`JMP`|JMP files, Version 7 or later format|.jmp|
+|`TAB`|Delimited file (tab-delimited values)|.txt|
+|`EXCEL`|Microsoft Excel 97, 2000, 2002, 2003, or 2007 spreadsheet using the LIBNAME statement.|.xls .xlsb .xlsm .xlsx|
+|`XLS`|Microsoft Excel 5.0, 95, 97, 2000, 2002, or 2003 spreadsheet using file formats|.xls|
+|`ACCESS`|Microsoft Access 2000, 2002, 2003, or 2007 table using the LIBNAME statement.|.mdb .accdb|
+|`DTA`|Stata file|.dta|
+|`EXCEL 4` `EXCEL 5`|Microsoft Excel 4.0, Excel 5.0 or 7.0 (95) spreadsheet.|.xls|
+|`EXCELCS`|Microsoft Excel spreadsheet connecting remotely through PC Files Server.|.xls  .xlsb|
+|`SAV`|SPSS file|.sav|
+|`TAB`|Delimited file (tab-delimited values)|.txt|
+
+### `proc import`常用语句
+
+- `getnames=yes|no;`语句：对于Excel文档，以第一行为变量名。
+- `sheet=sheet-name;`语句：对于Excel文档，指定文档中sheet的名字。
+- `range = '$A1:H10';`语句：若只读取工作表的一部分范围。
+- `mixed=yes|no;`语句：若同时有字符和数值型，不将数值型转换为缺失值而是处理为字符型; 使用mixed之后，日期也会被当作字符处理。
+- `datarow=n;`语句：指定开始读取的行号，从第几行开始读取数据。
