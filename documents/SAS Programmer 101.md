@@ -28,6 +28,10 @@
   - [`proc report`过程](#proc-report过程)
   - [`proc transpose`过程](#proc-transpose过程)
   - [`proc import`过程](#proc-import过程)
+  - [“入组成功”、“随机成功”、“筛选成功”的区别](#入组成功-随机成功-筛选成功的区别)
+  - [定义Analysis Set](#定义analysis-set)
+  - [Analysis Visit Window与Baseline Definition](#analysis-visit-window与baseline-definition)
+  - [SDTM/ADaM中Origin的填法](#sdtmadam中origin的填法)
 
 <!-- /code_chunk_output -->
 
@@ -2369,3 +2373,94 @@ run;
 - `range = '$A1:H10';`语句：若只读取工作表的一部分范围。
 - `mixed=yes|no;`语句：若同时有字符和数值型，不将数值型转换为缺失值而是处理为字符型; 使用mixed之后，日期也会被当作字符处理。
 - `datarow=n;`语句：指定开始读取的行号，从第几行开始读取数据。
+
+## “入组成功”、“随机成功”、“筛选成功”的区别
+
+### 筛选成功(Screen)
+
+通常指的是**受试者通过了初步的筛选标准**，这些标准可能包括年龄、性别、疾病类型、病情严重程度等。筛选成功的受试者符合进一步评估的条件，可以进入下一阶段的详细评估和知情同意过程。
+
+筛选失败：意味着受试者在初步筛选或详细评估中不符合试验的入选标准，因此不能继续参与试验。筛选失败的原因可能包括：
+
+- 不符合年龄或性别要求。
+- 病情不符合试验的特定阶段或严重程度。
+- 存在排除标准，如其他正在接受的治疗、并发症或特定的实验室检测结果。
+- 受试者拒绝签署知情同意书。
+
+### 入组成功(Enrolled)
+
+是指受试者符合临床试验的入选标准，**已经提供了知情同意，并经过筛选程序后被正式纳入试验的过程**。入组成功通常意味着受试者的基本信息和筛选数据已经被记录在电子数据采集系统（EDC）中。
+
+- 这一过程通常包括以下阶段（过程）：
+  1. 筛选期访视：受试者在筛选期需要完成一系列的检查和评估，以确定其是否符合试验的入选标准。
+  2. 知情同意：受试者在充分了解试验的目的、过程、可能的风险和收益后，自愿签署知情同意书。
+  3. 入组确认：在满足所有入选标准且不符合排除标准的情况下，受试者被正式纳入试验。
+
+- 目的：
+  关注的是受试者的资格和知情同意，确保受试者符合试验要求。
+
+### 随机成功(Randomized)
+
+是指在受试者**入组成功后，通过随机化方法将受试者分配到不同的治疗组或对照组的过程**。随机化的目的是确保各组在基线时的均衡性，减少偏倚，提高研究结果的可靠性。这一过程有时候是双盲的，意味着受试者和研究人员通常不知道受试者被分配到了哪个组。随机化的方法包括简单随机、区组随机、分层随机和适应性随机等。
+
+- 这一过程通常包括以下阶段（过程）：
+  - 随机化方法的选择和实施。例如，IWRS系统中的随机化操作包括新增受试者、筛选期访视中相关表单填写、受试者随机以及随机号使用情况。
+
+- 目的：
+关注的是通过随机化方法实现组间的均衡性和减少偏倚。
+
+## 定义Analysis Set
+
+决定相关的Analysis Set的定义主要遵循以下两个原则(ICH E9)：
+
+- 减小偏差(to minimise bias)。
+- 避免一类错误膨胀(to avoid inflation of type I error)。
+
+### Full Analysis Set
+
+
+### ADaM与SDTM中Population indicator的体现
+
+- COMPLFL
+- FASFL
+- ITTFL
+- PPROTFL
+- SAFFL
+
+### 在Study中的应用案例
+
+- **Safety Set**
+The safety set will consist of all subjects who received tigulixostat or placebo. The safety set will be used for the safety analyses. Analyses using the safety set will group subjects according to treatment actually received.
+- **Intent-to-treat Set(ITT Set)**
+The ITT set will consist of all subjects who were randomly assigned to receive study drug. The ITT set will be used for the efficacy analyses. Analyses using the ITT set will group subjects according to randomized treatment.
+- **Per Protocol Set (PPS)**
+The PPS will consist of all ITT subjects who have 80-120% treatment compliance for both kits in the first 6 months of treatment, have not taken any prohibited medication, have no significant protocol deviations that may affect the interpretation of study results of primary efficacy end-point, and have valid sUA assessments in Month 4, Month 5, and Month 6 with analysis visit window applied. Duplicated subjects (enrolled more than once within the study) will be excluded from PPS. The PPS will be used for supplementary analyses of the efficacy endpoints. Analyses using the PPS will group subjects according to treatment actually received.
+- **Pharmacokinetics Set (PK Set)**
+The PK set is defined as all subjects who receive at least 1 dose of tigulixostat and have at least 1 evaluable PK plasma concentration of tigulixostat.
+- **Pharmacodynamic Set (PD Set)**
+The PD set is defined as all subjects who receive at least 1 dose of tigulixostat and have at least 1 evaluable PD measurement.
+- **Enrolled Set**
+The Enrolled set is defined as all subjects enrolled in the study. It is used to summarize disposition.
+
+## Analysis Visit Window与Baseline Definition
+
+## SDTM/ADaM中Origin的填法
+
+|Origin|Description|
+|-|-|
+|CRF|Data that was collected as part of a CRF and has an annotated CRF associated with the variable.|
+|Protocol|Data that is defined as part of the Trial Design preparation. An example would be VSPOS (Vital Signs Position), which may be specified only in the protocol and not appear on a CRF or transferred via eDT.|
+|eDT|Data that is received via an electronic Data Transfer (eDT) and usually does not have associated annotations. An origin of eDT refers to data collected via data streams such as laboratory, ECG, or IVRS.|
+|Predecessor|Data that is copied from a variable in another dataset. For example, predecessor is used to link ADaM data back to SDTM variables to establish traceability.|
+|Derived|Data that is not directly collected on the CRF or received via eDT, but is calculated by an algorithm or reproducible rule defined by the sponsor, which is dependent upon other data values.|
+|Assigned|Data that is determined by individual judgment (by an evaluator other than the subject or investigator), rather than collected as part of the CRF, eDT or derived based on an algorithm. This may include third party attributions by an adjudicator. Coded terms that are supplied as part of a coding process (as in --DECOD) are considered to have an Origin of "Assigned". Values that are set independently of any subject-related data values in order to complete SDTM fields such as DOMAIN and --TESTCD are considered to have an Origin of "Assigned".|
+
+
+### SDTM Origin
+
+Possible SDTM values are **CRF**, **Derived**, **Assigned**, **Protocol**, **eDT**.
+
+### ADaM Origin
+
+- Origin should reflect the situation in the given ADaM dataset.
+- Possible ADaM values are **Derived**, **Assigned**, **Predecessor**.

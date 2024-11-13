@@ -28,231 +28,29 @@
 <div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="code-chunk-btn-group"><div class="run-btn btn btn-xs btn-primary"><span>▶︎</span></div><div class="run-all-btn btn btn-xs btn-primary">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
 <li><a href="#sas-programmer-101">SAS-Programmer-101</a>
 <ul>
-<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E9%80%89%E9%A1%B9%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F">数据集选项执行顺序</a>
-<ul>
-<li><a href="#%E9%80%89%E9%A1%B9%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F">选项执行顺序</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E9%9B%86%E9%80%89%E9%A1%B9">常见数据集选项</a></li>
-</ul>
-</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E9%80%89%E9%A1%B9%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F">数据集选项执行顺序</a></li>
 <li><a href="#sas-eg%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E6%9F%A5log%E7%9A%84%E6%96%B9%E6%B3%95">SAS EG设置自动查log的方法</a></li>
-<li><a href="#%E5%A4%84%E7%90%86%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E4%B8%8E%E8%BE%93%E5%87%BA%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7">处理特殊字符与输出特殊符号</a>
-<ul>
-<li><a href="#%E4%B8%8A%E4%B8%8B%E6%A0%87supersub">上/下标：<code>super</code>/<code>sub</code></a></li>
-<li><a href="#%E5%90%AB%E7%89%B9%E6%AE%8A%E6%84%8F%E4%B9%89%E7%9A%84%E5%AD%97%E7%AC%A6raw">含特殊意义的字符：<code>raw</code></a></li>
-<li><a href="#%E5%85%B6%E4%BB%96%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6unicode">其他特殊字符：<code>unicode</code></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8unicode%E5%88%A0%E9%99%A4%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6">使用unicode删除特殊字符</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9C%89%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%89%E9%A1%B9">有用的系统选项</a>
-<ul>
-<li><a href="#%E4%BF%AE%E6%94%B9%E5%8F%98%E9%87%8F%E5%90%8D%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99">修改变量名命名规则</a></li>
-<li><a href="#%E5%AE%8F%E9%87%8C%E9%9D%A2%E4%BD%BF%E7%94%A8in%E8%AF%AD%E5%8F%A5%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%89%E9%A1%B9">宏里面使用<code>in</code>语句的系统选项</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3footnote%E5%A4%AA%E9%95%BF%E7%9A%84warning">解决footnote太长的warning</a></li>
-</ul>
-</li>
-<li><a href="#sas%E6%95%B0%E6%8D%AE%E9%9B%86%E9%80%BB%E8%BE%91%E5%BA%93excel%E7%9A%84%E4%BA%A4%E4%BA%92">sas数据集/逻辑库/excel的交互</a>
-<ul>
-<li><a href="#sas%E6%95%B0%E6%8D%AE%E9%9B%86%E5%AF%BC%E5%87%BA%E5%88%B0excel">sas数据集导出到excel</a>
-<ul>
-<li><a href="#%E4%BD%BF%E7%94%A8ods-excel">使用<code>ods excel</code></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8ods-%E5%AF%BC%E5%87%BA%E5%B8%A6%E6%9C%89template%E7%9A%84excel">使用<code>ods</code> 导出带有template的excel</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8proc-export">使用<code>proc export</code></a></li>
-</ul>
-</li>
-<li><a href="#excel%E5%AF%BC%E5%85%A5%E4%B8%BAsas%E6%95%B0%E6%8D%AE%E9%9B%86">excel导入为sas数据集</a>
-<ul>
-<li><a href="#%E4%BD%BF%E7%94%A8proc-import">使用<code>proc import</code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%88%A0%E9%99%A4%E5%AE%8F%E5%8F%98%E9%87%8F%E7%9A%84%E9%A2%9D%E5%A4%96%E7%A9%BA%E6%A0%BC">删除宏变量的额外空格</a>
-<ul>
-<li><a href="#%E6%96%B9%E6%B3%95separated-by-">方法：<code>separated by ''</code></a></li>
-<li><a href="#%E6%96%B9%E6%B3%95trimmed">方法：<code>trimmed</code></a></li>
-<li><a href="#%E6%96%B9%E6%B3%95let">方法：<code>%let</code></a></li>
-</ul>
-</li>
-<li><a href="#%E6%8E%A9%E7%A0%81%E5%AE%8F%E5%87%BD%E6%95%B0">掩码宏函数</a>
-<ul>
-<li><a href="#str%E4%B8%8Enrstr"><code>%str</code>与<code>%nrstr</code></a></li>
-<li><a href="#quote%E5%92%8Cnrquote"><code>%quote</code>和<code>%nrquote</code></a></li>
-<li><a href="#bquote%E5%92%8Cnrbquote"><code>%bquote</code>和<code>%nrbquote</code></a></li>
-<li><a href="#superq"><code>%superq</code></a></li>
-<li><a href="#unquote"><code>%unquote</code></a></li>
-<li><a href="#%E5%85%B7%E6%9C%89%E6%8E%A9%E7%A0%81%E4%BD%9C%E7%94%A8%E7%9A%84%E5%AE%8F%E5%87%BD%E6%95%B0">具有掩码作用的宏函数</a></li>
-</ul>
-</li>
+<li><a href="#%E5%A4%84%E7%90%86%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E4%B8%8E%E8%BE%93%E5%87%BA%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7">处理特殊字符与输出特殊符号</a></li>
+<li><a href="#%E6%9C%89%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%89%E9%A1%B9">有用的系统选项</a></li>
+<li><a href="#sas%E6%95%B0%E6%8D%AE%E9%9B%86%E9%80%BB%E8%BE%91%E5%BA%93excel%E7%9A%84%E4%BA%A4%E4%BA%92">sas数据集/逻辑库/excel的交互</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%AE%8F%E5%8F%98%E9%87%8F%E7%9A%84%E9%A2%9D%E5%A4%96%E7%A9%BA%E6%A0%BC">删除宏变量的额外空格</a></li>
+<li><a href="#%E6%8E%A9%E7%A0%81%E5%AE%8F%E5%87%BD%E6%95%B0">掩码宏函数</a></li>
 <li><a href="#attrib%E8%AF%AD%E5%8F%A5"><code>attrib</code>语句</a></li>
-<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>
-<ul>
-<li><a href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D">模式匹配</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a>
-<ul>
-<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%9E%84%E6%88%90">正则表达式的构成</a></li>
-<li><a href="#reg%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">reg基本语法</a></li>
-</ul>
-</li>
-<li><a href="#sas%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0">SAS中的基本函数</a></li>
-<li><a href="#%E4%B8%80%E8%88%AC%E5%85%83%E5%AD%97%E7%AC%A6">一般元字符</a></li>
-<li><a href="#%E5%85%83%E5%AD%97%E7%AC%A6%E5%88%86%E7%BB%84">元字符分组</a></li>
-<li><a href="#%E5%89%8D%E5%90%91%E6%90%9C%E7%B4%A2%E5%92%8C%E5%90%8E%E5%90%91%E6%90%9C%E7%B4%A2%E6%96%AD%E8%A8%80">前向搜索和后向搜索【断言】</a></li>
-<li><a href="#%E6%B3%A8%E9%87%8A%E5%92%8C%E5%86%85%E8%81%94%E4%BF%AE%E9%A5%B0%E7%AC%A6">注释和内联修饰符</a></li>
-<li><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%BB%84%E5%90%88">表达式的组合</a></li>
-<li><a href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99">常用正则</a></li>
-</ul>
-</li>
-<li><a href="#length%E8%AF%AD%E5%8F%A5"><code>length</code>语句</a>
-<ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</a></li>
-<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
-</ul>
-</li>
-<li><a href="#retain%E8%AF%AD%E5%8F%A5"><code>retain</code>语句</a>
-<ul>
-<li><a href="#retain%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>retain</code>使用说明</a></li>
-<li><a href="#retain%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><code>retain</code>注意事项</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8retain%E5%89%8D%E5%90%91%E5%A1%AB%E5%85%85%E7%BC%BA%E5%A4%B1%E5%80%BC">案例：使用<code>retain</code>前向填充缺失值</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8retain%E7%BB%99%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%BA%8F%E5%8F%B7">案例：使用<code>retain</code>给数据加序号</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8Bset%E8%AF%AD%E5%8F%A5%E8%87%AA%E5%8A%A8retain%E5%8F%98%E9%87%8F">案例：<code>set</code>语句自动<code>retain</code>变量</a></li>
-</ul>
-</li>
-<li><a href="#set%E8%AF%AD%E5%8F%A5"><code>set</code>语句</a>
-<ul>
-<li><a href="#set%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>set</code>使用说明</a></li>
-<li><a href="#%E4%B8%80%E4%B8%AAset%E8%AF%AD%E5%8F%A5%E4%B8%AD%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86">一个<code>set</code>语句中多个数据集</a></li>
-<li><a href="#%E5%A4%9A%E4%B8%AAset%E8%AF%AD%E5%8F%A5%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86">多个<code>set</code>语句中一个数据集</a></li>
-<li><a href="#%E9%80%89%E9%A1%B9pointvariable">选项：<code>point=Variable</code></a></li>
-<li><a href="#%E9%80%89%E9%A1%B9nobsvariable">选项：<code>nobs=Variable</code></a></li>
-<li><a href="#%E9%80%89%E9%A1%B9endvariable">选项：<code>end=Variable</code></a></li>
-</ul>
-</li>
-<li><a href="#merge%E8%AF%AD%E5%8F%A5"><code>merge</code>语句</a>
-<ul>
-<li><a href="#%E6%B2%A1%E6%9C%89by%E8%AF%AD%E5%8F%A5%E7%9A%84merge">没有<code>by</code>语句的<code>merge</code></a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8by%E8%AF%AD%E5%8F%A5%E7%9A%84merge">使用<code>by</code>语句的<code>merge</code></a></li>
-<li><a href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2">多表查询</a>
-<ul>
-<li><a href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF%E4%B8%A4%E4%B8%AA%E8%A1%A8%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E7%9A%84">笛卡尔积：两个表所有可能的</a></li>
-<li><a href="#%E5%86%85%E8%81%94%E6%8E%A5%E4%B8%A4%E4%B8%AA%E8%A1%A8%E5%85%B1%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE">内联接：两个表共有的数据</a></li>
-<li><a href="#%E5%B7%A6%E8%BF%9E%E6%8E%A5%E5%8C%B9%E9%85%8D%E5%90%8E%E4%BF%9D%E7%95%99%E5%B7%A6%E8%A1%A8%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E5%B7%A6%E8%A1%A8%E9%A1%BA%E5%BA%8F%E4%BF%9D%E6%8C%81%E4%B8%8D%E5%8F%98">左连接：匹配后保留左表所有数据，左表顺序保持不变</a></li>
-<li><a href="#%E5%B7%A6%E8%BF%9E%E6%8E%A5%E5%8F%AA%E4%BF%9D%E7%95%99%E5%B7%A6%E8%A1%A8%E7%8B%AC%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE">左连接：只保留左表独有的数据</a></li>
-<li><a href="#%E5%8F%B3%E8%BF%9E%E6%8E%A5%E5%8C%B9%E9%85%8D%E5%90%8E%E4%BF%9D%E7%95%99%E5%8F%B3%E8%A1%A8%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E5%8F%B3%E8%A1%A8%E9%A1%BA%E5%BA%8F%E4%BF%9D%E6%8C%81%E4%B8%8D%E5%8F%98">右连接：匹配后保留右表所有数据，右表顺序保持不变</a></li>
-<li><a href="#%E5%8F%B3%E8%BF%9E%E6%8E%A5%E5%8F%AA%E4%BF%9D%E7%95%99%E5%8F%B3%E8%A1%A8%E7%8B%AC%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE">右连接：只保留右表独有的数据</a></li>
-<li><a href="#%E5%85%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E8%A1%A8%E7%9A%84%E5%8C%B9%E9%85%8D%E6%95%B0%E6%8D%AE%E5%8F%8A%E6%9C%AA%E5%8C%B9%E9%85%8D%E7%9A%84%E6%95%B0%E6%8D%AE">全连接：两个表的匹配数据及未匹配的数据</a></li>
-<li><a href="#%E5%85%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E8%A1%A8%E5%90%84%E8%87%AA%E7%9A%84%E7%8B%AC%E6%9C%89%E6%95%B0%E6%8D%AE">全连接：两个表各自的独有数据</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#array%E8%AF%AD%E5%8F%A5"><code>array</code>语句</a>
-<ul>
-<li><a href="#array%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>array</code>使用说明</a></li>
-<li><a href="#%E9%80%9A%E8%BF%87%E4%B8%8B%E6%A0%87%E5%BC%95%E7%94%A8%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0">通过下标引用数组元素</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8do%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0">使用<code>do</code>循环遍历数组元素</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8of%E8%BF%90%E7%AE%97%E7%AC%A6%E5%A4%84%E7%90%86%E6%89%80%E6%9C%89%E5%85%83%E7%B4%A0">使用<code>of</code>运算符处理所有元素</a></li>
-<li><a href="#in%E8%BF%90%E7%AE%97%E7%AC%A6%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E5%80%BC"><code>in</code>运算符访问数组元素的值</a></li>
-<li><a href="#%E4%B8%8D%E5%90%8C%E6%95%B0%E7%BB%84%E9%97%B4%E7%9A%84%E5%88%A4%E6%96%AD">不同数组间的判断</a></li>
-</ul>
-</li>
-<li><a href="#select-when%E8%AF%AD%E5%8F%A5"><code>select-when</code>语句</a>
-<ul>
-<li><a href="#select-when%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>select-when</code>使用说明</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%95%E5%8F%98%E9%87%8F%E5%88%A4%E6%96%AD">案例: 简单的单变量判断</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B-%E4%BD%BF%E7%94%A8do-end%E6%89%A7%E8%A1%8C%E5%A4%8D%E6%9D%82%E8%AF%AD%E5%8F%A5%E7%BB%84">案例: 使用<code>do-end</code>执行复杂语句组</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B-%E5%9C%A8when%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%A4%8D%E5%90%88%E8%A1%A8%E8%BE%BE%E5%BC%8F">案例: 在<code>when</code>中使用复合表达式</a></li>
-</ul>
-</li>
-<li><a href="#continue%E4%B8%8Eleave%E8%AF%AD%E5%8F%A5"><code>continue</code>与<code>leave</code>语句</a>
-<ul>
-<li><a href="#continue%E4%B8%8Eleave%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>continue</code>与<code>leave</code>使用说明</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8continue%E8%B7%B3%E8%BF%87%E5%BD%93%E5%89%8D%E5%BE%AA%E7%8E%AF">案例：使用<code>continue</code>跳过当前循环</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8leave%E8%B7%B3%E5%87%BA%E6%95%B4%E4%B8%AA%E5%BE%AA%E7%8E%AF">案例：使用leave跳出整个循环</a></li>
-</ul>
-</li>
-<li><a href="#link%E4%B8%8Egoto%E8%AF%AD%E5%8F%A5"><code>link</code>与<code>goto</code>语句</a>
-<ul>
-<li><a href="#link%E4%B8%8Egoto%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>link</code>与<code>goto</code>使用说明</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8goto%E8%BD%AC%E5%88%B0%E6%8C%87%E5%AE%9A%E8%AF%AD%E5%8F%A5">案例：使用<code>goto</code>转到指定语句</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8%E5%B8%A6return%E8%AF%AD%E5%8F%A5%E7%9A%84link">案例：使用带return语句的<code>link</code></a></li>
-</ul>
-</li>
-<li><a href="#output%E4%B8%8Ereturn%E8%AF%AD%E5%8F%A5"><code>output</code>与<code>return</code>语句</a>
-<ul>
-<li><a href="#output%E4%B8%8Ereturn%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>output</code>与<code>return</code>使用说明</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8return%E5%81%9C%E6%AD%A2%E5%90%8E%E7%BB%AD%E8%AF%AD%E5%8F%A5">案例：使用<code>return</code>停止后续语句</a></li>
-<li><a href="#%E6%A1%88%E4%BE%8B%E4%BD%BF%E7%94%A8%E5%B0%86%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A7%82%E6%B5%8B%E6%95%B0%E6%8D%AE%E8%BE%93%E5%87%BA%E5%88%B0%E5%90%8C%E4%B8%80%E8%A1%8C">案例：使用将不同的观测数据输出到同一行</a></li>
-</ul>
-</li>
-<li><a href="#proc-sort%E8%BF%87%E7%A8%8B"><code>proc sort</code>过程</a>
-<ul>
-<li><a href="#proc-sort%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>proc sort</code>使用说明</a></li>
-<li><a href="#%E5%8F%AA%E4%BF%9D%E7%95%99%E6%B2%A1%E6%9C%89%E9%87%8D%E5%A4%8D%E7%9A%84%E8%A7%82%E6%B5%8B">只保留没有重复的观测</a></li>
-<li><a href="#%E5%AF%B9%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BF%9B%E8%A1%8C%E5%8E%BB%E9%87%8D">对数据集进行去重</a></li>
-<li><a href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E8%A7%82%E6%B5%8B">获取数据集中重复的观测</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8key%E8%AF%AD%E5%8F%A5%E5%AF%B9%E6%95%B4%E4%BD%93%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE%E5%80%92%E5%BA%8F">使用<code>key</code>语句对整体变量设置倒序</a></li>
-</ul>
-</li>
-<li><a href="#proc-format%E8%BF%87%E7%A8%8B"><code>proc format</code>过程</a>
-<ul>
-<li><a href="#proc-format%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><code>proc format</code>使用说明</a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AEformat%E7%9A%84%E8%8C%83%E5%9B%B4%E5%80%BC">设置format的范围值</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8defaultn%E9%80%89%E9%A1%B9%E5%A4%84%E7%90%86format%E6%88%AA%E6%96%AD">使用<code>(default=n)</code>选项处理format截断</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8fuzzn%E9%80%89%E9%A1%B9%E8%AE%BE%E7%BD%AE%E6%A8%A1%E7%B3%8Aformat">使用<code>(fuzz=.n)</code>选项设置模糊format</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89picure%E7%9A%84%E6%95%B0%E5%80%BC%E6%A8%A1%E6%9D%BF">定义<code>picure</code>的数值模板</a></li>
-<li><a href="#%E5%AF%B9picture%E6%95%B0%E5%80%BC%E6%A8%A1%E6%9D%BF%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0">对<code>picture</code>数值模板保留小数</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E7%9A%84%E8%BE%93%E5%87%BA%E6%A8%A1%E6%9D%BF">定义描述统计的输出模板</a></li>
-<li><a href="#picuture%E8%BF%9B%E8%A1%8Cround%E7%9A%84bug%E5%A4%84%E7%90%86"><code>picuture</code>进行<code>round</code>的Bug处理</a></li>
-<li><a href="#format%E4%B8%8E%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E4%BC%A0%E8%BE%93"><code>format</code>与数据集的传输</a>
-<ul>
-<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E4%B8%BAformat">数据集转为<code>format</code></a></li>
-<li><a href="#format%E8%BD%AC%E4%B8%BA%E6%95%B0%E6%8D%AE%E9%9B%86"><code>format</code>转为数据集</a>
-<ul>
-<li><a href="#%E5%B8%B8%E8%A7%84format%E8%BD%AC%E4%B8%BA%E6%95%B0%E6%8D%AE%E9%9B%86">常规<code>format</code>转为数据集</a></li>
-<li><a href="#%E5%B8%A6%E6%9C%89%E7%AB%AF%E7%82%B9%E5%80%BC%E5%92%8C%E6%97%A0%E9%99%90%E8%8C%83%E5%9B%B4%E7%9A%84format%E8%BD%AC%E4%B8%BA%E6%95%B0%E6%8D%AE%E9%9B%86">带有端点值和无限范围的<code>format</code>转为数据集</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#proc-report%E8%BF%87%E7%A8%8B"><code>proc report</code>过程</a>
-<ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E5%8F%A5">基本语句</a></li>
-<li><a href="#ods%E8%AF%AD%E5%8F%A5%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E"><code>ods</code>语句相关说明</a></li>
-<li><a href="#%E8%BF%87%E7%A8%8B%E6%AD%A5options">过程步options</a></li>
-<li><a href="#column%E8%AF%AD%E5%8F%A5"><code>column</code>语句</a>
-<ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99">基本原则</a></li>
-<li><a href="#%E5%A4%9A%E5%B1%82%E8%A1%A8%E5%A4%B4">多层表头</a></li>
-</ul>
-</li>
-<li><a href="#where%E8%AF%AD%E5%8F%A5"><code>where</code>语句</a></li>
-<li><a href="#define%E8%AF%AD%E5%8F%A5"><code>define</code>语句</a></li>
-<li><a href="#by%E8%AF%AD%E5%8F%A5"><code>by</code>语句</a></li>
-<li><a href="#byvar%E7%9A%84%E4%BD%BF%E7%94%A8"><code>#byvar</code>的使用</a></li>
-<li><a href="#break%E4%B8%8Erbreak%E8%AF%AD%E5%8F%A5"><code>break</code>与<code>rbreak</code>语句</a></li>
-<li><a href="#compute%E8%AF%AD%E5%8F%A5"><code>compute</code>语句</a>
-<ul>
-<li><a href="#line%E8%AF%AD%E5%8F%A5"><code>line</code>语句</a></li>
-<li><a href="#call-define%E8%AF%AD%E5%8F%A5"><code>call define</code>语句</a></li>
-</ul>
-</li>
-<li><a href="#footnote%E6%98%BE%E7%A4%BA%E5%9C%A8%E7%AC%AC%E4%B8%80%E9%A1%B5">footnote显示在第一页</a></li>
-</ul>
-</li>
-<li><a href="#proc-transpose%E8%BF%87%E7%A8%8B"><code>proc transpose</code>过程</a>
-<ul>
-<li><a href="#%E8%BF%87%E7%A8%8B%E6%AD%A5%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E">过程步选项说明</a></li>
-<li><a href="#byidvaridlabel%E8%AF%AD%E5%8F%A5"><code>by</code>/<code>id</code>/<code>var</code>/<code>idlabel</code>语句</a></li>
-</ul>
-</li>
-<li><a href="#proc-import%E8%BF%87%E7%A8%8B"><code>proc import</code>过程</a>
-<ul>
-<li><a href="#%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9%E4%BB%8B%E7%BB%8D">常用选项介绍</a></li>
-<li><a href="#proc-import%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5"><code>proc import</code>常用语句</a></li>
-</ul>
-</li>
+<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a></li>
+<li><a href="#length%E8%AF%AD%E5%8F%A5"><code>length</code>语句</a></li>
+<li><a href="#retain%E8%AF%AD%E5%8F%A5"><code>retain</code>语句</a></li>
+<li><a href="#set%E8%AF%AD%E5%8F%A5"><code>set</code>语句</a></li>
+<li><a href="#merge%E8%AF%AD%E5%8F%A5"><code>merge</code>语句</a></li>
+<li><a href="#array%E8%AF%AD%E5%8F%A5"><code>array</code>语句</a></li>
+<li><a href="#select-when%E8%AF%AD%E5%8F%A5"><code>select-when</code>语句</a></li>
+<li><a href="#continue%E4%B8%8Eleave%E8%AF%AD%E5%8F%A5"><code>continue</code>与<code>leave</code>语句</a></li>
+<li><a href="#link%E4%B8%8Egoto%E8%AF%AD%E5%8F%A5"><code>link</code>与<code>goto</code>语句</a></li>
+<li><a href="#output%E4%B8%8Ereturn%E8%AF%AD%E5%8F%A5"><code>output</code>与<code>return</code>语句</a></li>
+<li><a href="#proc-sort%E8%BF%87%E7%A8%8B"><code>proc sort</code>过程</a></li>
+<li><a href="#proc-format%E8%BF%87%E7%A8%8B"><code>proc format</code>过程</a></li>
+<li><a href="#proc-report%E8%BF%87%E7%A8%8B"><code>proc report</code>过程</a></li>
+<li><a href="#proc-transpose%E8%BF%87%E7%A8%8B"><code>proc transpose</code>过程</a></li>
+<li><a href="#proc-import%E8%BF%87%E7%A8%8B"><code>proc import</code>过程</a></li>
 </ul>
 </li>
 </ul>
