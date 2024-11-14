@@ -28,10 +28,6 @@
   - [`proc report`过程](#proc-report过程)
   - [`proc transpose`过程](#proc-transpose过程)
   - [`proc import`过程](#proc-import过程)
-  - [“入组成功”、“随机成功”、“筛选成功”的区别](#入组成功-随机成功-筛选成功的区别)
-  - [定义Analysis Set](#定义analysis-set)
-  - [Analysis Visit Window与Baseline Definition](#analysis-visit-window与baseline-definition)
-  - [SDTM/ADaM中Origin的填法](#sdtmadam中origin的填法)
 
 <!-- /code_chunk_output -->
 
@@ -1794,18 +1790,32 @@ a       b(length=10)   c
 ### `picuture`进行`round`的Bug处理
 
 - 当percent=9.96时，`put(percent,pcta.)`结果为0的问题。
-- 用额外的data步操作进行手动处理。
 
-```SAS
-proc format;
-    picture pcta(round)
-        0-<10   ='9.9)' (prefix=' (  ')
-        10-<100='99.9)' (prefix=' ( ')
-        100   ='999  )' (prefix=' (') ;
-run;
+  是因为这种数字进行round之后会变成10.0就会有额外的长度，但实际还是用9.96属于0-<10这个区间进行format的mapping。
 
-if 9.95 <= percent < 10 or 99.95 <= percent < 100 then percent = round(percent, 2);
-```
+1. 用额外的data步操作进行手动处理。
+
+    ```SAS
+    proc format;
+        picture pcta(round)
+            0-<10   ='9.9)' (prefix=' (  ')
+            10-<100='99.9)' (prefix=' ( ')
+            100   ='999  )' (prefix=' (') ;
+    run;
+
+    if 9.95 <= percent < 10 or 99.95 <= percent < 100 then percent = round(percent, 2);
+    ```
+
+2. 在picture的range设定中修改范围为9.5/99.95
+
+    ```sas
+    proc format;
+        picture pcta(round)
+            0-<9.5   ='9.9)' (prefix=' (  ')
+            9.5-<99.95='99.9)' (prefix=' ( ')
+            99.95   ='999  )' (prefix=' (') ;
+    run;
+    ```
 
 ### `format`与数据集的传输
 
@@ -2236,7 +2246,7 @@ quit;
 
 ods escapechar="~";
 ods listing close;
-ods rtf file="&_olistings.&TFLNAME..rtf" style=global.rtf operator="~{\dntblnsbdb}";
+ods rtf file="&_olistings.&TFLNAME..rtf" style=global.rtf operator="{\jexpand\dntblnsbdb}";
 %do i=0 %to 1;
     data final_out;
         set final_all;

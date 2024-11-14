@@ -51,10 +51,6 @@
 <li><a href="#proc-report%E8%BF%87%E7%A8%8B"><code>proc report</code>过程</a></li>
 <li><a href="#proc-transpose%E8%BF%87%E7%A8%8B"><code>proc transpose</code>过程</a></li>
 <li><a href="#proc-import%E8%BF%87%E7%A8%8B"><code>proc import</code>过程</a></li>
-<li><a href="#%E5%85%A5%E7%BB%84%E6%88%90%E5%8A%9F-%E9%9A%8F%E6%9C%BA%E6%88%90%E5%8A%9F-%E7%AD%9B%E9%80%89%E6%88%90%E5%8A%9F%E7%9A%84%E5%8C%BA%E5%88%AB">“入组成功”、“随机成功”、“筛选成功”的区别</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89analysis-set">定义Analysis Set</a></li>
-<li><a href="#analysis-visit-window%E4%B8%8Ebaseline-definition">Analysis Visit Window与Baseline Definition</a></li>
-<li><a href="#sdtmadam%E4%B8%ADorigin%E7%9A%84%E5%A1%AB%E6%B3%95">SDTM/ADaM中Origin的填法</a></li>
 </ul>
 </li>
 </ul>
@@ -2261,9 +2257,14 @@ a       b(length=10)   c
 
 </code></pre><h3 id="picuture进行round的bug处理"><code>picuture</code>进行<code>round</code>的Bug处理 </h3>
 <ul>
-<li>当percent=9.96时，<code>put(percent,pcta.)</code>结果为0的问题。</li>
-<li>用额外的data步操作进行手动处理。</li>
+<li>
+<p>当percent=9.96时，<code>put(percent,pcta.)</code>结果为0的问题。</p>
+<p>是因为这种数字进行round之后会变成10.0就会有额外的长度，但实际还是用9.96属于0-&lt;10这个区间进行format的mapping。</p>
+</li>
 </ul>
+<ol>
+<li>
+<p>用额外的data步操作进行手动处理。</p>
 <pre data-role="codeBlock" data-info="SAS" class="language-sas SAS"><code><span class="token step keyword">proc format</span><span class="token punctuation">;</span>
     picture <span class="token function keyword">pcta</span><span class="token punctuation">(</span>round<span class="token punctuation">)</span>
         <span class="token number">0</span><span class="token operator">-</span><span class="token operator">&lt;</span><span class="token number">10</span>   <span class="token operator">=</span><span class="token string">'9.9)'</span> <span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">' (  '</span><span class="token punctuation">)</span>
@@ -2272,7 +2273,18 @@ a       b(length=10)   c
 <span class="token step keyword">run</span><span class="token punctuation">;</span>
 
 <span class="token keyword keyword-if">if</span> <span class="token number">9.95</span> <span class="token operator">&lt;=</span> percent <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token keyword keyword-or">or</span> <span class="token number">99.95</span> <span class="token operator">&lt;=</span> percent <span class="token operator">&lt;</span> <span class="token number">100</span> <span class="token keyword keyword-then">then</span> percent <span class="token operator">=</span> <span class="token function keyword">round</span><span class="token punctuation">(</span>percent<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><h3 id="format与数据集的传输"><code>format</code>与数据集的传输 </h3>
+</code></pre></li>
+<li>
+<p>在picture的range设定中修改范围为9.5/99.95</p>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token step keyword">proc format</span><span class="token punctuation">;</span>
+    picture <span class="token function keyword">pcta</span><span class="token punctuation">(</span>round<span class="token punctuation">)</span>
+        <span class="token number">0</span><span class="token operator">-</span><span class="token operator">&lt;</span><span class="token number">9.5</span>   <span class="token operator">=</span><span class="token string">'9.9)'</span> <span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">' (  '</span><span class="token punctuation">)</span>
+        <span class="token number">9.5</span><span class="token operator">-</span><span class="token operator">&lt;</span><span class="token number">99.95</span><span class="token operator">=</span><span class="token string">'99.9)'</span> <span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">' ( '</span><span class="token punctuation">)</span>
+        <span class="token number">99.95</span>   <span class="token operator">=</span><span class="token string">'999  )'</span> <span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">' ('</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token step keyword">run</span><span class="token punctuation">;</span>
+</code></pre></li>
+</ol>
+<h3 id="format与数据集的传输"><code>format</code>与数据集的传输 </h3>
 <ul>
 <li>表中字段要有<code>FMTNAME</code>,<code>START</code>,<code>END</code>,<code>LABEL</code>。
 <ul>
@@ -2809,7 +2821,7 @@ line <span class="token punctuation">@</span><span class="token number">1</span>
 
 <span class="token keyword keyword-ods">ods</span> escapechar<span class="token operator">=</span><span class="token string">"~"</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-ods">ods</span> listing <span class="token keyword keyword-close">close</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-ods">ods</span> rtf <span class="token keyword keyword-file">file</span><span class="token operator">=</span><span class="token string">"&amp;_olistings.&amp;TFLNAME..rtf"</span> style<span class="token operator">=</span>global<span class="token punctuation">.</span>rtf operator<span class="token operator">=</span><span class="token string">"~{\dntblnsbdb}"</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ods">ods</span> rtf <span class="token keyword keyword-file">file</span><span class="token operator">=</span><span class="token string">"&amp;_olistings.&amp;TFLNAME..rtf"</span> style<span class="token operator">=</span>global<span class="token punctuation">.</span>rtf operator<span class="token operator">=</span><span class="token string">"{\jexpand\dntblnsbdb}"</span><span class="token punctuation">;</span>
 <span class="token macro-keyword keyword">%do</span> i<span class="token operator">=</span><span class="token number">0</span> <span class="token macro-keyword keyword">%to</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token step keyword">data</span> final_out<span class="token punctuation">;</span>
         <span class="token keyword keyword-set">set</span> final_all<span class="token punctuation">;</span>

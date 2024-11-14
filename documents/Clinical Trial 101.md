@@ -2,55 +2,61 @@
 
 ## 受试者临床试验流程
 
-1. **筛选期(Visit=Screening)**
-   1. 患者签署知情同意书
-        - 签署知情同意的时间*代表受试者参加临床试验的起点*：RFICDT
-        - 符合筛选条件的受试者进入Enrollment Set：ENRLFL=Y
-   2. 入组前检查
-        - 身高/体重/年龄/性别/婚育状况/吸烟史/酗酒史等：DM domain
-        - 适应症相关的症状评估表：QS domain
-        - 既往用药/既往病史等：CM/MH domain
-        - 实验室检查/CT/心电图等：LB/PR/EG domain
-   3. 筛选入排标准
-        - 符合全部入组标准，不符合全部排除标准：IE domain
-        - 不符合标准的记为筛败：Screen Failure
-   4. 随机分组
-        - 随机时间：RANDDT
-        - 是否随机：RANDFL=Y
-        - 进入意向性分析集：ITTFL=Y
-        - 分配随机号：RANDNUM
+### 筛选期(Visit=Screening)
 
-2. **治疗期(VISIT=DAY 1/2/...)**
-   1. 发药
-        - 收集发药信息(DA domain)：DATEST/DAORRES/DADTC
-   2. 在吃药前可能会再进行一次检查
-        - 首次吃药前最后一次非空的检查结果作为基线结果：Baseline, BASE
-   3. 首次吃药
-        - 记录首次用药时间：TRTSDT
-        - 收集计划入组和实际入组信息：TRT01P, TRT01A
-        - 进入全分析集：FASFL=Y
-        - 进入安全性分析集：SAFFL=Y
-        - 吃药信息收集到EX中：ASTDT/AENDT/ADOSE/DOSEFRQ/DOSROUTE...
-   4. 吃药后检查
-        - 吃药后所有新发症状都收集到AE：用AESTDTC与TRTSDT比较后得到TRTEMFL=Y
-   5. 定期吃药和检查
-        - 每次检查都会被看成一个访视：VISIT
-        - 收集定期吃药的信息：EX domain
-        - 记录每次访视的检查结果：LB/EG/PR/QS domain...
-        - 需要送到中心实验室的检查项目：Center Lab(External Vendor Data)
-        - 本地实验室检查的项目：Local Lab(EDC Data)
+1. 患者签署知情同意书
+     - 签署知情同意的时间*代表受试者参加临床试验的起点*：RFICDT
+     - 符合筛选条件的受试者进入Enrollment Set：ENRLFL=Y
+2. 入组前检查
+     - 身高/体重/年龄/性别/婚育状况/吸烟史/酗酒史等：DM domain
+     - 适应症相关的症状评估表：QS domain
+     - 既往用药/既往病史等：CM/MH domain
+     - 实验室检查/CT/心电图等：LB/PR/EG domain
+3. 筛选入排标准
+     - 符合全部入组标准，不符合全部排除标准：IE domain
+     - 不符合标准的记为筛败：Screen Failure
+4. 随机分组
+     - 随机时间：RANDDT
+     - 是否随机：RANDFL=Y
+     - 进入意向性分析集：ITTFL=Y
+     - 分配随机号：RANDNUM
 
-3. **治疗结束(VISIT=ET/EOT)**
+### 治疗期(VISIT=DAY 1/2/...)
+
+1. 发药
+     - 收集发药信息(DA domain)：DATEST/DAORRES/DADTC
+2. 在吃药前可能会再进行一次检查
+     - 首次吃药前最后一次非空的检查结果作为基线结果：Baseline, BASE
+3. 首次吃药
+     - 记录首次用药时间：TRTSDT
+     - 收集计划入组和实际入组信息：TRT01P, TRT01A
+     - 进入全分析集：FASFL=Y
+     - 进入安全性分析集：SAFFL=Y
+     - 吃药信息收集到EX中：ASTDT/AENDT/ADOSE/DOSEFRQ/DOSROUTE...
+4. 吃药后检查
+     - 吃药后所有新发症状都收集到AE：用AESTDTC与TRTSDT比较后得到TRTEMFL=Y
+5. 定期吃药和检查
+     - 每次检查都会被看成一个访视：VISIT
+     - 收集定期吃药的信息：EX domain
+     - 记录每次访视的检查结果：LB/EG/PR/QS domain...
+     - 需要送到中心实验室的检查项目：Center Lab(External Vendor Data)
+     - 本地实验室检查的项目：Local Lab(EDC Data)
+
+### 治疗结束(VISIT=ET/EOT)
+
    1. 正常吃药并完成了整个治疗期(EOT="COMPLETED")：VISIT=End of Treatment
    2. 提前结束治疗试验(EOT="DISCONTINUED")：VISIT=Early Termination
    3. 疗效评估：QS/FA/LB
-4. **随访(VISIT=Follow-up)**
+
+## 随访(VISIT=Follow-up)
+
    1. 治疗结束后进行安全随访和生存随访：VISIT=Follow-Up
 
-5. **研究结束(VISIT=EOS)**
+## 研究结束(VISIT=EOS)
+
    1. 结束随访后即整个研究结束(EOS="COMPLETED")：VISIT=End of Study
 
-> 在写SE的时候，筛选期的SEENDTC是什么日期？治疗期的SEENDTC又是什么日期？在求RFPENDTC的时候，如果进行了生存随访，但是受试者在前几天就死亡了，今天这个随访日期我们能做到RFPENDTC里面去吗？
+          > 在写SE的时候，筛选期的SEENDTC是什么日期？治疗期的SEENDTC又是什么日期？在求RFPENDTC的时候，如果进行了生存随访，但是受试者在前几天就死亡了，今天这个随访日期我们能做到RFPENDTC里面去吗？
 
 ## Analysis Population
 
@@ -92,7 +98,7 @@
 
 - 人群：是**FAS中的受试者对方案更具依从性的子集**，其中受试者符合如下标准：
   - 完成了对治疗方案的某个预先设定的最小暴露量。
-  - 可以获得主要指标的测量值。
+  - 可以获得主要指标的测量值（试验中主要指标的数据均可以获得）。
   - 无任何重大方案违背，包括入组标准违背。
 
      一般来说未能进入PPS集的病例有以下特征：
@@ -141,35 +147,97 @@
   - 可能需要提前明确SAP中对于Treated与Safety Set定义的区别
   - = Subjects Completed Treatment(EOT=COMPLETED) + Subjects Discontinued from Treatment(EOT=DISCONTINUED)
 
-## Analysis Visit Window
+## Analysis Visit
 
-The by-visit summaries will be displayed by scheduled nominal visits only. All assessments (both scheduled and unscheduled) will be mapped to an analysis visit according to the days relative to the first study drug dosing date (study day). The mutually exclusive analysis visit window is specified in Table 1.1 and Table 1.2 , based on protocol-defined target study day. Unless otherwise stated, if there are multiple assessments within an analysis visit window, the assessment collected in scheduled nominal visits will be used. If there are no valid assessments collected in scheduled nominal visits, then the one that is closest to the target study day will be used, unless two assessments that not scheduled on nominal visits are equally close, in which case the later assessment will be used.  By-subject listings will display the unscheduled or Early Termination (ET) visit as collected in Electronic Data Capture (EDC), without analysis visit mapping. But, study day will be included in subject listings.
+### Baseline
 
-Unscheduled or ET measurements will contribute to cross visit summaries, including sUA levels of <6.0 mg/dL sustained at Months 4, 5, and 6; AUC of sUA from baseline to Month 6; rate of gout flares from baseline to Month 6 (Every 3 months and overall); proportion of subjects reporting a gout flare up to each visit. (Every 3 months and overall); Maximum/ Minimum value during a time period, incidence of event during a time period, etc.
+- 一般用于分析的目的定义基线baseline为：**首次给药前的最后一次非空的评估**。
+- 需要根据study protocol/SAP来确定：
+  - 与首次给药同一天进行的计划内评估(schedule assessment)：被视为在给药前(pre-dose)进行的评估。
+  - 与首次给药同一天进行的计划外评估(schedule assessment)：被视为在给药后(post-dose)进行的评估。
+  - 随机但为给药的受试者将随机当天或之前的最后一次非空评估作为基线baseline。
+  - 对于Lab数据：只有Central Lab Data才会考虑基线baseline的定义。
 
-## 统计学一般考虑
+### Study Day
 
-描述性统计内容：
+- 首次给药日期的Study Day=1。
+- 如果评估日期在首次给药日期之前：
+  - Study Day = (Date of assessment or interest - first study drug dosing date)
+- 如果评估日期在首次给药日期当天或之后：
+  - Study Day = (Date of assessment or interest - first study drug dosing date) + 1
+- 一般来说只有评估日期和首次给药日期都存在的时候才会计算Study Day。但对于随机后但未给药的受试者有时可能需要额外考虑。
+- 对于Post-Baseline的筛选方法：
+  1. 因为Study Day(ADY)的本质就是和首次用药日期来判断，而Baseline是首次用药前的最后一次非空评估日期，所以Baseline的ADY理论上<=1, Post-Baseline的ADY>1。
+  2. 如果对于Baseline的定义有额外的说明或者不寻常的方式，可以通过ABLFL=Y的日期来判断：ADY>ADY(ABLFL=Y)。
 
-连续型变量（Continued Variables，比如说血压、身高、心率、实验室检查结果等）一般用均值、例数、最大最小、中位数、标准差等进行描述；
+### Visit Window
 
-分类型变量（Categorical Variables，比如说种族、性别、量表结果等）一般用例数、频数、百分比表示。
+- Visit-Window:
 
-一般来说，连续型变量可以通过一定的规则转换为分类型变量，但是会缺失一些数据的精度，不过也方便直观呈现些统计学结果。在普通试验中，数据一般都是比较完整的，不完整的数据，也能把它变完整（逃）但是在临床试验中，一般不允许造假（咳咳，一线的煎茶员们看穿别揭穿哈），但是数据不完整就会影响统计推断，咋办？那就通过一系列的方法，把这个数据不全，方便我们分析。详细掌握SAP中的数据补齐方法，是在做数据集时候需要仔细看的。
+  - 所有(计划内和计划外的)评估将根据相对于首次研究药物给药日期（研究日）的天数映射到一个用于分析的访视(AVISIT/AVISITN)。分析访问窗口的定义一般是基于方案定义的目标研究日(Target Study Day)。如果在一个访视窗口内有多条评估记录，优先使用scheduled nominal visits；如果这些记录中没有scheduled nominal visits，然后选择距离target sutdy day最近的一条评估记录；如果在这种情况下还有多条记录距离target sutdy day同样近，选择靠后的一条。
+  - Visit-Window的范围不能有重叠(overlap)，但可能会覆盖整个研究周期，在两个range之间也可能有间隔(gap)。
+  - Follow-up Visit通常不会被定义在访视窗口中。
 
-推断性统计的：
+- scheduled nominal visit的使用：
+  - 对于大部分的by-visit的summary table，由于primary analysis flag会选择scheduled visit，所以一般可以通过ANL0XFL来选择相应的记录。
 
-也就是p值得计算了，具体使用什么模型，双侧单侧，CI多少，模型的因素选择是啥，等都是需要关注的点。
+- Unscheduled or ET的使用：
+  - 一般对于by-subject的listing会呈现收集到的原始计划外的和ET visit，而不是mapping之后的avisit。
+  - 此外用于cross visit summaries，一般会在SAP或shell中说明。
 
-## 主要疗效指标（Primary Endpoints）
+- 对超窗的理解
+  - 在临床试验中，由于人力、环境及其他因素的影响，致某项操作时间超过方案允许的计划内正负时间范围，即称超窗。超窗应按照方案偏离上报。
+  - 常见的超窗类型：访视超窗、检查检验超窗。
+    - 访视超窗：访视超窗是指受试者未按照试验方案要求的时间返院
+    - 检查检验超窗：检查/检验超窗是指受试者检查、检验结果超过试验方案规定的窗口期。
+  - 超窗的处理：
+    - 优先依据方案寻找处理建议：若在临床试验方案中，对随访超窗有了比较详细、可行的处理方法，按照方案规定相应执行即可。
 
-如果一个CRA做监查都不知道本试验的主要疗效指标是什么，那我认为是不合格的，至少方案培训是没有到位的。整个临床试验的开展，都是围绕主要疗效指标的统计学假设进行的。H0和H1分别是什么，本研究是优效/非劣效/等效等。使用什么样的统计模型进行分析，主要疗效指标的变量是什么类型，需要根据临床的实际情况加入各种因素（协变量等），明确了目标后，才能更好地进行统计分析和临床试验的开展和监查。
+## Endpoint
 
-次要疗效指标和安全性分析指标也是类似，但侧重点不同，就不展开讲了。
+### 主要疗效指标(primary outcome/primary endpoint)
 
-冷知识：临床试验的样本量计算都是根据主要疗效指标来估计的，所以其实比较安全性指标的p值，意义不是很大，因为样本量不是为它服务的，也就图一乐。当然，不同方案设计会有不同的统计分析方法，我统计学小白属于班门弄斧，也请大家指正。
+- 与研究主要目的直接相关，能确切反应药物有效性或安全性的观察指标。
+- 通常一个临床试验主要指标只有一个。
+- 根据实验目的的选择易于量化、客观性强、变异小、重复性高。
+- 预先在protocol中明确定义。
+- 用于试验样本量的估计。
 
+### 次要疗效指标(secondary outcome/secondary endpoint)
 
+- 与主要目的相关的辅助性指标，或与次要目的相关的指标。
+- 通常有多个次要指标。
+- 预先在protocol中明确定义。
+- 只有当主要指标有统计学意义时，次要指标的统计分析结果才有参考价值。
+
+### 伴发事件(Intercurrent events)
+
+- 治疗开始后发生的事件，这些事件会影响与临床问题相关的测量结果的解释或存在。在描述所关注的临床问题时，有必要对伴发事件进行处理，以便精确定义所要估计的治疗效果。
+- 处理伴发事件的五种最常用的策略：
+  - 疗法策略(Treatment policy strategy)
+  - 假想策略(Hypothetical strategy)
+  - 复合变量策略(Composite variable strategy)
+  - 在治策略(While on treatment strategy)
+  - 主层策略(Pricipal stratum strategy)
+- 常见的Intercurrent Events
+  - 因不良反应退出治疗或减量
+  - 因无疗效退出治疗
+  - 因有效退出治疗
+  - 其他原因退出治疗
+  - 使用救援用药
+  - 转组
+  - 使用后线治疗
+  - 因病死亡
+
+### 估计目标的5个属性
+
+估计目标是对治疗效果的精确描述，对试验目标和重点的详细化。
+
+- 治疗(Treatments)：即受试者接受了实验组还是对照组的治疗，具体治疗内容是什么。针对受试者所在组别的不同，受试者接受的治疗可能不同。
+- 人群(Population)：即该临床试验入组的受试者，不同治疗组的人群应该是相同的。
+- 变量(Endpoint or Outcome)：即该估计目标所针对的主要终点是什么。
+- 伴发事件及其处理策略(Intercurrent Event)：即受试者在接受指定治疗的过程中出现了哪些可以影响疗效准确性的时间。而处理策略，即针对该伴发事件我们可以采取哪些手段来尽可能的降低该事件对临床问题准确性的影响。同一个伴发事件针对不同的重点变量可能使用不同的处理策略。
+- 群体层面汇总(Population-lvel Summary)：规定终点或结局变量在群体层面的汇总统计量。
 
 ## SDTM/ADaM中Origin的填法
 

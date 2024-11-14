@@ -1,0 +1,592 @@
+<!DOCTYPE html><html><head>
+      <title>Clinical Trial 101</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Dux1\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="clinical-trial-101">Clinical Trial 101 </h1>
+<h2 id="受试者临床试验流程">受试者临床试验流程 </h2>
+<h3 id="筛选期visitscreening">筛选期(Visit=Screening) </h3>
+<ol>
+<li>患者签署知情同意书
+<ul>
+<li>签署知情同意的时间<em>代表受试者参加临床试验的起点</em>：RFICDT</li>
+<li>符合筛选条件的受试者进入Enrollment Set：ENRLFL=Y</li>
+</ul>
+</li>
+<li>入组前检查
+<ul>
+<li>身高/体重/年龄/性别/婚育状况/吸烟史/酗酒史等：DM domain</li>
+<li>适应症相关的症状评估表：QS domain</li>
+<li>既往用药/既往病史等：CM/MH domain</li>
+<li>实验室检查/CT/心电图等：LB/PR/EG domain</li>
+</ul>
+</li>
+<li>筛选入排标准
+<ul>
+<li>符合全部入组标准，不符合全部排除标准：IE domain</li>
+<li>不符合标准的记为筛败：Screen Failure</li>
+</ul>
+</li>
+<li>随机分组
+<ul>
+<li>随机时间：RANDDT</li>
+<li>是否随机：RANDFL=Y</li>
+<li>进入意向性分析集：ITTFL=Y</li>
+<li>分配随机号：RANDNUM</li>
+</ul>
+</li>
+</ol>
+<h3 id="治疗期visitday-12">治疗期(VISIT=DAY 1/2/...) </h3>
+<ol>
+<li>发药
+<ul>
+<li>收集发药信息(DA domain)：DATEST/DAORRES/DADTC</li>
+</ul>
+</li>
+<li>在吃药前可能会再进行一次检查
+<ul>
+<li>首次吃药前最后一次非空的检查结果作为基线结果：Baseline, BASE</li>
+</ul>
+</li>
+<li>首次吃药
+<ul>
+<li>记录首次用药时间：TRTSDT</li>
+<li>收集计划入组和实际入组信息：TRT01P, TRT01A</li>
+<li>进入全分析集：FASFL=Y</li>
+<li>进入安全性分析集：SAFFL=Y</li>
+<li>吃药信息收集到EX中：ASTDT/AENDT/ADOSE/DOSEFRQ/DOSROUTE...</li>
+</ul>
+</li>
+<li>吃药后检查
+<ul>
+<li>吃药后所有新发症状都收集到AE：用AESTDTC与TRTSDT比较后得到TRTEMFL=Y</li>
+</ul>
+</li>
+<li>定期吃药和检查
+<ul>
+<li>每次检查都会被看成一个访视：VISIT</li>
+<li>收集定期吃药的信息：EX domain</li>
+<li>记录每次访视的检查结果：LB/EG/PR/QS domain...</li>
+<li>需要送到中心实验室的检查项目：Center Lab(External Vendor Data)</li>
+<li>本地实验室检查的项目：Local Lab(EDC Data)</li>
+</ul>
+</li>
+</ol>
+<h3 id="治疗结束visiteteot">治疗结束(VISIT=ET/EOT) </h3>
+<ol>
+<li>正常吃药并完成了整个治疗期(EOT="COMPLETED")：VISIT=End of Treatment</li>
+<li>提前结束治疗试验(EOT="DISCONTINUED")：VISIT=Early Termination</li>
+<li>疗效评估：QS/FA/LB</li>
+</ol>
+<h2 id="随访visitfollow-up">随访(VISIT=Follow-up) </h2>
+<ol>
+<li>治疗结束后进行安全随访和生存随访：VISIT=Follow-Up</li>
+</ol>
+<h2 id="研究结束visiteos">研究结束(VISIT=EOS) </h2>
+<ol>
+<li>
+<p>结束随访后即整个研究结束(EOS="COMPLETED")：VISIT=End of Study</p>
+<pre class="language-text">&gt; 在写SE的时候，筛选期的SEENDTC是什么日期？治疗期的SEENDTC又是什么日期？在求RFPENDTC的时候，如果进行了生存随访，但是受试者在前几天就死亡了，今天这个随访日期我们能做到RFPENDTC里面去吗？
+</pre>
+</li>
+</ol>
+<h2 id="analysis-population">Analysis Population </h2>
+<p>决定相关的Analysis Set的定义主要遵循以下两个原则(ICH E9)：</p>
+<ul>
+<li>最小化偏差(to minimise bias)。</li>
+<li>避免一类错误膨胀(to avoid inflation of type I error)。</li>
+</ul>
+<h3 id="enrolled-setenrlfl">Enrolled Set(ENRLFL) </h3>
+<ul>
+<li>
+<p>人群：受试者<strong>签署了知情同意书同意参加临床试验</strong>。</p>
+</li>
+<li>
+<p>应用：主要用于summarize <strong>Disposition</strong>。</p>
+</li>
+<li>
+<p>分组：被随机（<strong>计划</strong>）的组。</p>
+</li>
+</ul>
+<h3 id="intent-to-treatmentittfl">Intent-to-Treatment(ITTFL) </h3>
+<ul>
+<li>
+<p>人群：纳入<strong>所有随机化受试者</strong>，并遵从随机化分配结果进行统计分析。</p>
+</li>
+<li>
+<p>应用：<strong>通常用于主分析(Primary Analysis)</strong>。</p>
+<ul>
+<li>因为它倾向于避免PPS所导致的对有效性的过度乐观估计：PPS中可以提前排除无基线值、依从性差、早期失访的患者，通常此类患者较高的结局事件发生风险，因此，ITT的结果一般偏于保守。</li>
+<li>ITT原则认为<strong>依据计划的随机化而不是实际的治疗措施</strong>才能做出对效果最好的评价。ITT的优势在于尽量保持随机化，<strong>最大程度的均衡基线特征，从而排除影响疗效评估的其他因素</strong>。</li>
+</ul>
+</li>
+<li>
+<p>分组：被随机（<strong>计划</strong>）的组。</p>
+</li>
+</ul>
+<h3 id="full-analysis-setfasfl">Full Analysis Set(FASFL) </h3>
+<ul>
+<li>
+<p>人群：<strong>尽可能接近包括所有随机化受试者的ITT理想状态的分析集</strong>。在FAS分析中，保持初始随机化对于防止偏倚以及为统计检验提供可靠基础是很重要的。FAS是<strong>以最小和最合理的方法排除了ITT中的部分受试者</strong>，原因通常包括：</p>
+<ul>
+<li>违反重要入组标准（不合格入选标准的受试者）。</li>
+<li>受试者未接受试验药物治疗。</li>
+<li>无任何随机化后试验随访记录的受试者。</li>
+</ul>
+</li>
+<li>
+<p>应用：<strong>一般用于疗效的分析评价</strong>。为许多临床试验提供了相对保守的策略，如果主要疗效指标缺失，可根据ITT分析，用前一次的结果结转可比性分析和次要疗效指标的缺失不作转结。</p>
+</li>
+<li>
+<p>分组：<strong>实际</strong>的治疗组。</p>
+</li>
+</ul>
+<h3 id="per-protocol-setppsfl">Per-Protocol Set(PPSFL) </h3>
+<ul>
+<li>
+<p>人群：是<strong>FAS中的受试者对方案更具依从性的子集</strong>，其中受试者符合如下标准：</p>
+<ul>
+<li>
+<p>完成了对治疗方案的某个预先设定的最小暴露量。</p>
+</li>
+<li>
+<p>可以获得主要指标的测量值（试验中主要指标的数据均可以获得）。</p>
+</li>
+<li>
+<p>无任何重大方案违背，包括入组标准违背。</p>
+<p>一般来说未能进入PPS集的病例有以下特征：</p>
+</li>
+<li>
+<p>主要疗效指标缺失基线值，无法有效评估。</p>
+</li>
+<li>
+<p>存在研究方案违背/偏离。</p>
+</li>
+<li>
+<p>依从性差。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>应用：<strong>一般用于疗效的分析评价</strong>。使用PPS最可能在分析中显示出治疗的有效性。然而，相应的假设检验和处理效应估计可能不准确，对研究方案的依从性可能与处理和结局有关，这些因素可能会引入严重偏倚。</p>
+</li>
+<li>
+<p>分组：<strong>实际</strong>的治疗组。</p>
+</li>
+</ul>
+<h3 id="safety-setsaffl">Safety Set(SAFFL) </h3>
+<ul>
+<li>
+<p>人群：<strong>至少接受一次治疗，且有安全性指标记录的实际数据</strong>。</p>
+</li>
+<li>
+<p>应用：主要用于安全性评价：Extent of Exposure, AE/AESI, Clinical Laboratory Evaluation, Vital Signs, Physical Findings and Electrocardiogram.</p>
+<ul>
+<li>安全性数据缺失值不能转结。</li>
+</ul>
+</li>
+<li>
+<p>分组：<strong>实际</strong>的治疗组。</p>
+</li>
+</ul>
+<h3 id="pharmacokinetics-setpkfl">Pharmacokinetics Set(PKFL) </h3>
+<ul>
+<li>人群：<strong>至少接受一次治疗，且至少有一个可评估的PK血浆浓度</strong>。</li>
+<li>应用：PK 分析。</li>
+<li>分组：<strong>实际</strong>的治疗组。</li>
+</ul>
+<h3 id="pharmacodynamic-set-pdfl">Pharmacodynamic Set (PDFL) </h3>
+<ul>
+<li>人群：<strong>至少接受一次治疗，并且具有至少1个可评估的PD测量</strong>。</li>
+<li>应用：PD 分析。</li>
+<li>分组：<strong>实际</strong>的治疗组。</li>
+</ul>
+<h2 id="disposition">Disposition </h2>
+<ul>
+<li>
+<p><strong>Screened(ENRLFL=Y)</strong></p>
+<ul>
+<li>= Subjects Failed Screening + Subjects Randomized(RANDFL=Y)</li>
+</ul>
+</li>
+<li>
+<p><strong>Randomized(RANDFL=Y)</strong></p>
+<ul>
+<li>
+<p>= Subjects Randomized but not Treated(RANDFL=Y &amp; SAFFL^=Y) + subject Treated(SAFFL=Y)</p>
+</li>
+<li>
+<p>= Subjects Completed Study(EOS=COMPLETED) + Subjects Discontinued from Study(EOS=DISCONTINUED)</p>
+</li>
+<li>
+<p>= Subjects Completed the Month 6 Visit(M6CMFL=Y) + Subjects Withdrawal before the Month 6 Visit(M6CMET=Y)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Treated(SAFFL=Y)</strong></p>
+<ul>
+<li>可能需要提前明确SAP中对于Treated与Safety Set定义的区别</li>
+<li>= Subjects Completed Treatment(EOT=COMPLETED) + Subjects Discontinued from Treatment(EOT=DISCONTINUED)</li>
+</ul>
+</li>
+</ul>
+<h2 id="analysis-visit">Analysis Visit </h2>
+<h3 id="baseline">Baseline </h3>
+<ul>
+<li>一般用于分析的目的定义基线baseline为：<strong>首次给药前的最后一次非空的评估</strong>。</li>
+<li>需要根据study protocol/SAP来确定：
+<ul>
+<li>与首次给药同一天进行的计划内评估(schedule assessment)：被视为在给药前(pre-dose)进行的评估。</li>
+<li>与首次给药同一天进行的计划外评估(schedule assessment)：被视为在给药后(post-dose)进行的评估。</li>
+<li>随机但为给药的受试者将随机当天或之前的最后一次非空评估作为基线baseline。</li>
+<li>对于Lab数据：只有Central Lab Data才会考虑基线baseline的定义。</li>
+</ul>
+</li>
+</ul>
+<h3 id="study-day">Study Day </h3>
+<ul>
+<li>首次给药日期的Study Day=1。</li>
+<li>如果评估日期在首次给药日期之前：
+<ul>
+<li>Study Day = (Date of assessment or interest - first study drug dosing date)</li>
+</ul>
+</li>
+<li>如果评估日期在首次给药日期当天或之后：
+<ul>
+<li>Study Day = (Date of assessment or interest - first study drug dosing date) + 1</li>
+</ul>
+</li>
+<li>一般来说只有评估日期和首次给药日期都存在的时候才会计算Study Day。但对于随机后但未给药的受试者有时可能需要额外考虑。</li>
+<li>对于Post-Baseline的筛选方法：
+<ol>
+<li>因为Study Day(ADY)的本质就是和首次用药日期来判断，而Baseline是首次用药前的最后一次非空评估日期，所以Baseline的ADY理论上&lt;=1, Post-Baseline的ADY&gt;1。</li>
+<li>如果对于Baseline的定义有额外的说明或者不寻常的方式，可以通过ABLFL=Y的日期来判断：ADY&gt;ADY(ABLFL=Y)。</li>
+</ol>
+</li>
+</ul>
+<h3 id="visit-window">Visit Window </h3>
+<ul>
+<li>
+<p>Visit-Window:</p>
+<ul>
+<li>所有(计划内和计划外的)评估将根据相对于首次研究药物给药日期（研究日）的天数映射到一个用于分析的访视(AVISIT/AVISITN)。分析访问窗口的定义一般是基于方案定义的目标研究日(Target Study Day)。如果在一个访视窗口内有多条评估记录，优先使用scheduled nominal visits；如果这些记录中没有scheduled nominal visits，然后选择距离target sutdy day最近的一条评估记录；如果在这种情况下还有多条记录距离target sutdy day同样近，选择靠后的一条。</li>
+<li>Visit-Window的范围不能有重叠(overlap)，但可能会覆盖整个研究周期，在两个range之间也可能有间隔(gap)。</li>
+<li>Follow-up Visit通常不会被定义在访视窗口中。</li>
+</ul>
+</li>
+<li>
+<p>scheduled nominal visit的使用：</p>
+<ul>
+<li>对于大部分的by-visit的summary table，由于primary analysis flag会选择scheduled visit，所以一般可以通过ANL0XFL来选择相应的记录。</li>
+</ul>
+</li>
+<li>
+<p>Unscheduled or ET的使用：</p>
+<ul>
+<li>一般对于by-subject的listing会呈现收集到的原始计划外的和ET visit，而不是mapping之后的avisit。</li>
+<li>此外用于cross visit summaries，一般会在SAP或shell中说明。</li>
+</ul>
+</li>
+<li>
+<p>对超窗的理解</p>
+<ul>
+<li>在临床试验中，由于人力、环境及其他因素的影响，致某项操作时间超过方案允许的计划内正负时间范围，即称超窗。超窗应按照方案偏离上报。</li>
+<li>常见的超窗类型：访视超窗、检查检验超窗。
+<ul>
+<li>访视超窗：访视超窗是指受试者未按照试验方案要求的时间返院</li>
+<li>检查检验超窗：检查/检验超窗是指受试者检查、检验结果超过试验方案规定的窗口期。</li>
+</ul>
+</li>
+<li>超窗的处理：
+<ul>
+<li>优先依据方案寻找处理建议：若在临床试验方案中，对随访超窗有了比较详细、可行的处理方法，按照方案规定相应执行即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="endpoint">Endpoint </h2>
+<h3 id="主要疗效指标primary-outcomeprimary-endpoint">主要疗效指标(primary outcome/primary endpoint) </h3>
+<ul>
+<li>与研究主要目的直接相关，能确切反应药物有效性或安全性的观察指标。</li>
+<li>通常一个临床试验主要指标只有一个。</li>
+<li>根据实验目的的选择易于量化、客观性强、变异小、重复性高。</li>
+<li>预先在protocol中明确定义。</li>
+<li>用于试验样本量的估计。</li>
+</ul>
+<h3 id="次要疗效指标secondary-outcomesecondary-endpoint">次要疗效指标(secondary outcome/secondary endpoint) </h3>
+<ul>
+<li>与主要目的相关的辅助性指标，或与次要目的相关的指标。</li>
+<li>通常有多个次要指标。</li>
+<li>预先在protocol中明确定义。</li>
+<li>只有当主要指标有统计学意义时，次要指标的统计分析结果才有参考价值。</li>
+</ul>
+<h3 id="伴发事件intercurrent-events">伴发事件(Intercurrent events) </h3>
+<ul>
+<li>治疗开始后发生的事件，这些事件会影响与临床问题相关的测量结果的解释或存在。在描述所关注的临床问题时，有必要对伴发事件进行处理，以便精确定义所要估计的治疗效果。</li>
+<li>处理伴发事件的五种最常用的策略：
+<ul>
+<li>疗法策略(Treatment policy strategy)</li>
+<li>假想策略(Hypothetical strategy)</li>
+<li>复合变量策略(Composite variable strategy)</li>
+<li>在治策略(While on treatment strategy)</li>
+<li>主层策略(Pricipal stratum strategy)</li>
+</ul>
+</li>
+<li>常见的Intercurrent Events
+<ul>
+<li>因不良反应退出治疗或减量</li>
+<li>因无疗效退出治疗</li>
+<li>因有效退出治疗</li>
+<li>其他原因退出治疗</li>
+<li>使用救援用药</li>
+<li>转组</li>
+<li>使用后线治疗</li>
+<li>因病死亡</li>
+</ul>
+</li>
+</ul>
+<h3 id="估计目标的5个属性">估计目标的5个属性 </h3>
+<p>估计目标是对治疗效果的精确描述，对试验目标和重点的详细化。</p>
+<ul>
+<li>治疗(Treatments)：即受试者接受了实验组还是对照组的治疗，具体治疗内容是什么。针对受试者所在组别的不同，受试者接受的治疗可能不同。</li>
+<li>人群(Population)：即该临床试验入组的受试者，不同治疗组的人群应该是相同的。</li>
+<li>变量(Endpoint or Outcome)：即该估计目标所针对的主要终点是什么。</li>
+<li>伴发事件及其处理策略(Intercurrent Event)：即受试者在接受指定治疗的过程中出现了哪些可以影响疗效准确性的时间。而处理策略，即针对该伴发事件我们可以采取哪些手段来尽可能的降低该事件对临床问题准确性的影响。同一个伴发事件针对不同的重点变量可能使用不同的处理策略。</li>
+<li>群体层面汇总(Population-lvel Summary)：规定终点或结局变量在群体层面的汇总统计量。</li>
+</ul>
+<h2 id="sdtmadam中origin的填法">SDTM/ADaM中Origin的填法 </h2>
+<table>
+<thead>
+<tr>
+<th>Origin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRF</td>
+<td>Data that was collected as part of a CRF and has an annotated CRF associated with the variable.</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>Data that is defined as part of the Trial Design preparation. An example would be VSPOS (Vital Signs Position), which may be specified only in the protocol and not appear on a CRF or transferred via eDT.</td>
+</tr>
+<tr>
+<td>eDT</td>
+<td>Data that is received via an electronic Data Transfer (eDT) and usually does not have associated annotations. An origin of eDT refers to data collected via data streams such as laboratory, ECG, or IVRS.</td>
+</tr>
+<tr>
+<td>Predecessor</td>
+<td>Data that is copied from a variable in another dataset. For example, predecessor is used to link ADaM data back to SDTM variables to establish traceability.</td>
+</tr>
+<tr>
+<td>Derived</td>
+<td>Data that is not directly collected on the CRF or received via eDT, but is calculated by an algorithm or reproducible rule defined by the sponsor, which is dependent upon other data values.</td>
+</tr>
+<tr>
+<td>Assigned</td>
+<td>Data that is determined by individual judgment (by an evaluator other than the subject or investigator), rather than collected as part of the CRF, eDT or derived based on an algorithm. This may include third party attributions by an adjudicator. Coded terms that are supplied as part of a coding process (as in --DECOD) are considered to have an Origin of "Assigned". Values that are set independently of any subject-related data values in order to complete SDTM fields such as DOMAIN and --TESTCD are considered to have an Origin of "Assigned".</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sdtm-origin">SDTM Origin </h3>
+<p>Possible SDTM values are <strong>CRF</strong>, <strong>Derived</strong>, <strong>Assigned</strong>, <strong>Protocol</strong>, <strong>eDT</strong>.</p>
+<h3 id="adam-origin">ADaM Origin </h3>
+<ul>
+<li>Origin should reflect the situation in the given ADaM dataset.</li>
+<li>Possible ADaM values are <strong>Derived</strong>, <strong>Assigned</strong>, <strong>Predecessor</strong>.</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#clinical-trial-101" class="md-toc-link"><p>Clinical Trial 101</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#受试者临床试验流程" class="md-toc-link"><p>受试者临床试验流程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#筛选期visitscreening" class="md-toc-link">
+            <p>筛选期(Visit=Screening)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#治疗期visitday-12" class="md-toc-link">
+            <p>治疗期(VISIT=DAY 1/2/...)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#治疗结束visiteteot" class="md-toc-link">
+            <p>治疗结束(VISIT=ET/EOT)</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#随访visitfollow-up" class="md-toc-link">
+            <p>随访(VISIT=Follow-up)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#研究结束visiteos" class="md-toc-link">
+            <p>研究结束(VISIT=EOS)</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#analysis-population" class="md-toc-link"><p>Analysis Population</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#enrolled-setenrlfl" class="md-toc-link">
+            <p>Enrolled Set(ENRLFL)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#intent-to-treatmentittfl" class="md-toc-link">
+            <p>Intent-to-Treatment(ITTFL)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#full-analysis-setfasfl" class="md-toc-link">
+            <p>Full Analysis Set(FASFL)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#per-protocol-setppsfl" class="md-toc-link">
+            <p>Per-Protocol Set(PPSFL)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#safety-setsaffl" class="md-toc-link">
+            <p>Safety Set(SAFFL)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pharmacokinetics-setpkfl" class="md-toc-link">
+            <p>Pharmacokinetics Set(PKFL)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pharmacodynamic-set-pdfl" class="md-toc-link">
+            <p>Pharmacodynamic Set (PDFL)</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#disposition" class="md-toc-link">
+            <p>Disposition</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#analysis-visit" class="md-toc-link"><p>Analysis Visit</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#baseline" class="md-toc-link">
+            <p>Baseline</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#study-day" class="md-toc-link">
+            <p>Study Day</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#visit-window" class="md-toc-link">
+            <p>Visit Window</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#endpoint" class="md-toc-link"><p>Endpoint</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#主要疗效指标primary-outcomeprimary-endpoint" class="md-toc-link">
+            <p>主要疗效指标(primary outcome/primary endpoint)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#次要疗效指标secondary-outcomesecondary-endpoint" class="md-toc-link">
+            <p>次要疗效指标(secondary outcome/secondary endpoint)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#伴发事件intercurrent-events" class="md-toc-link">
+            <p>伴发事件(Intercurrent events)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#估计目标的5个属性" class="md-toc-link">
+            <p>估计目标的5个属性</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#sdtmadam中origin的填法" class="md-toc-link"><p>SDTM/ADaM中Origin的填法</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sdtm-origin" class="md-toc-link">
+            <p>SDTM Origin</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#adam-origin" class="md-toc-link">
+            <p>ADaM Origin</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
