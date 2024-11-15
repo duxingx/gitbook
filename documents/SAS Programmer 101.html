@@ -36,6 +36,7 @@
 <li><a href="#%E5%88%A0%E9%99%A4%E5%AE%8F%E5%8F%98%E9%87%8F%E7%9A%84%E9%A2%9D%E5%A4%96%E7%A9%BA%E6%A0%BC">删除宏变量的额外空格</a></li>
 <li><a href="#%E6%8E%A9%E7%A0%81%E5%AE%8F%E5%87%BD%E6%95%B0">掩码宏函数</a></li>
 <li><a href="#attrib%E8%AF%AD%E5%8F%A5"><code>attrib</code>语句</a></li>
+<li><a href="#%E5%B0%86table%E6%8C%89%E7%85%A7%E5%AE%9E%E9%99%85%E7%9A%84%E4%BD%8D%E6%95%B0%E5%AF%B9%E9%BD%90%E5%8E%BB%E6%8E%89%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E6%A0%BC">将table按照实际的位数对齐(去掉多余的空格)</a></li>
 <li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a></li>
 <li><a href="#length%E8%AF%AD%E5%8F%A5"><code>length</code>语句</a></li>
 <li><a href="#retain%E8%AF%AD%E5%8F%A5"><code>retain</code>语句</a></li>
@@ -573,7 +574,50 @@ attrib x <span class="token keyword keyword-length">length</span><span class="to
 attrib month1<span class="token operator">-</span>month12 <span class="token keyword keyword-label">label</span><span class="token operator">=</span><span class="token string">'MONTHLY SALES'</span><span class="token punctuation">;</span>
 </code></pre></li>
 </ol>
-<h2 id="正则表达式">正则表达式 </h2>
+<h2 id="将table按照实际的位数对齐去掉多余的空格">将table按照实际的位数对齐(去掉多余的空格) </h2>
+<pre data-role="codeBlock" data-info="sas" class="language-sas sas"><code><span class="token macro-declaration"><span class="token keyword keyword-%macro">%macro</span> qcTflUcbPct(inds=, vars=)</span><span class="token punctuation">;</span>
+    <span class="token macro-keyword keyword">%let</span> Y <span class="token operator">=</span> <span class="token operator">|</span><span class="token punctuation">;</span>
+    <span class="token macro-keyword keyword">%let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token macro-keyword keyword">%do</span> <span class="token macro-keyword keyword">%until</span> <span class="token punctuation">(</span><span class="token macro-variable">&amp;X</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%let</span> _VAR <span class="token operator">=</span> <span class="token macro-keyword keyword">%scan</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;VARS</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token macro-variable">&amp;Y</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token step keyword">data</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-set">set</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-if">if</span> <span class="token function keyword">index</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">,</span> <span class="token string">'('</span><span class="token punctuation">)</span> <span class="token keyword keyword-then do">then do</span><span class="token punctuation">;</span>
+                parlength_<span class="token macro-variable">&amp;_VAR</span> <span class="token operator">=</span> <span class="token function keyword">length</span><span class="token punctuation">(</span><span class="token function keyword">strip</span><span class="token punctuation">(</span><span class="token function keyword">scan</span><span class="token punctuation">(</span><span class="token function keyword">scan</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">")"</span><span class="token punctuation">)</span> <span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"("</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-end">end</span><span class="token punctuation">;</span>
+        <span class="token step keyword">run</span><span class="token punctuation">;</span>
+        <span class="token step keyword">proc sql</span> noprint<span class="token punctuation">;</span>
+            <span class="token keyword keyword-select">select</span> distinct <span class="token function keyword">max</span><span class="token punctuation">(</span>parlength_<span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">)</span> into: maxpar from <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+        <span class="token step keyword">quit</span><span class="token punctuation">;</span>
+
+        <span class="token macro-keyword keyword">%if</span> <span class="token macro-variable">&amp;maxpar</span> <span class="token operator">=</span> <span class="token number">5</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token step keyword">data</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+                <span class="token keyword keyword-set">set</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+                <span class="token macro-variable">&amp;_VAR</span> <span class="token operator">=</span> <span class="token function keyword">tranwrd</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">,</span> <span class="token string">"(100.0)"</span><span class="token punctuation">,</span> <span class="token string">"(100  )"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%if</span> <span class="token macro-variable">&amp;maxpar</span> <span class="token operator">=</span> <span class="token number">4</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token step keyword">data</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+                <span class="token keyword keyword-set">set</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+                <span class="token macro-variable">&amp;_VAR</span> <span class="token operator">=</span> <span class="token function keyword">tranwrd</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">,</span> <span class="token string">"( "</span><span class="token punctuation">,</span> <span class="token string">"("</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%if</span> <span class="token macro-variable">&amp;maxpar</span> <span class="token operator">=</span> <span class="token number">3</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token step keyword">data</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+                <span class="token keyword keyword-set">set</span> <span class="token macro-variable">&amp;inds</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+                <span class="token macro-variable">&amp;_VAR</span> <span class="token operator">=</span> <span class="token function keyword">tranwrd</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">,</span> <span class="token string">"(  "</span><span class="token punctuation">,</span> <span class="token string">"("</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+
+        <span class="token macro-keyword keyword">%let</span> x <span class="token operator">=</span> <span class="token macro-keyword keyword">%index</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;VARS</span><span class="token punctuation">,</span><span class="token macro-variable">&amp;Y</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%if</span> <span class="token macro-keyword keyword">%length</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;VARS</span><span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token macro-variable">&amp;x</span><span class="token punctuation">.</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token macro-keyword keyword">%let</span> VARS<span class="token operator">=</span><span class="token macro-keyword keyword">%substr</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;VARS</span><span class="token punctuation">,</span><span class="token macro-variable">&amp;x</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%else</span> <span class="token macro-keyword keyword">%if</span> <span class="token macro-keyword keyword">%length</span><span class="token punctuation">(</span><span class="token macro-variable">&amp;VARS</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token macro-variable">&amp;x</span><span class="token punctuation">.</span> <span class="token macro-keyword keyword">%then</span> <span class="token macro-keyword keyword">%do</span><span class="token punctuation">;</span>
+            <span class="token macro-keyword keyword">%let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+    <span class="token macro-keyword keyword">%end</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-drop">drop</span> parlength_<span class="token macro-variable">&amp;_VAR</span><span class="token punctuation">;</span>
+<span class="token macro-end"><span class="token keyword keyword-%mend">%mend</span> qcTflUcbPct</span><span class="token punctuation">;</span>
+<span class="token function keyword">%qcTflUcbPct</span><span class="token punctuation">(</span>inds<span class="token operator">=</span>transfin<span class="token punctuation">,</span> vars<span class="token operator">=</span>COL1<span class="token operator">|</span>COL2<span class="token operator">|</span>COL3<span class="token operator">|</span>COL4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="正则表达式">正则表达式 </h2>
 <h3 id="模式匹配">模式匹配 </h3>
 <ul>
 <li>模式匹配能够在一个步骤中从字符串中搜索和提取多个匹配模式。</li>
@@ -3196,6 +3240,10 @@ line <span class="token punctuation">@</span><span class="token number">1</span>
     <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#attrib语句" class="md-toc-link">
             <p><code>attrib</code>语句</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#将table按照实际的位数对齐去掉多余的空格" class="md-toc-link">
+            <p>将table按照实际的位数对齐(去掉多余的空格)</p>
 
           </a></div><details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">

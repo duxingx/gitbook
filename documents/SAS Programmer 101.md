@@ -13,6 +13,7 @@
   - [删除宏变量的额外空格](#删除宏变量的额外空格)
   - [掩码宏函数](#掩码宏函数)
   - [`attrib`语句](#attrib语句)
+  - [将table按照实际的位数对齐(去掉多余的空格)](#将table按照实际的位数对齐去掉多余的空格)
   - [正则表达式](#正则表达式)
   - [`length`语句](#length语句)
   - [`retain`语句](#retain语句)
@@ -447,6 +448,54 @@ run;
    attrib x length=$4 label='TEST VARIABLE' y length=$2 label='RESPONSE';
    attrib month1-month12 label='MONTHLY SALES';
    ```
+
+
+## 将table按照实际的位数对齐(去掉多余的空格)
+
+```sas
+%macro qcTflUcbPct(inds=, vars=);
+    %let Y = |;
+    %let x = 2;
+    %do %until (&X = 1);
+        %let _VAR = %scan(&VARS., 1, &Y.);
+        data &inds.;
+            set &inds.;
+            if index(&_VAR, '(') then do;
+                parlength_&_VAR = length(strip(scan(scan(&_VAR, 1, ")") ,2, "(")));
+            end;
+        run;
+        proc sql noprint;
+            select distinct max(parlength_&_VAR) into: maxpar from &inds.;
+        quit;
+
+        %if &maxpar = 5 %then %do;
+            data &inds.;
+                set &inds.;
+                &_VAR = tranwrd(&_VAR, "(100.0)", "(100  )");
+        %end;
+        %if &maxpar = 4 %then %do;
+            data &inds.;
+                set &inds.;
+                &_VAR = tranwrd(&_VAR, "( ", "(");
+        %end;
+        %if &maxpar = 3 %then %do;
+            data &inds.;
+                set &inds.;
+                &_VAR = tranwrd(&_VAR, "(  ", "(");
+        %end;
+
+        %let x = %index(&VARS,&Y) + 1;
+        %if %length(&VARS) >= &x. %then %do;
+            %let VARS=%substr(&VARS,&x.);
+        %end;
+        %else %if %length(&VARS) < &x. %then %do;
+            %let x = 1;
+        %end;
+    %end;
+    drop parlength_&_VAR;
+%mend qcTflUcbPct;
+%qcTflUcbPct(inds=transfin, vars=COL1|COL2|COL3|COL4);
+```
 
 ## 正则表达式
 
