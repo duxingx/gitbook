@@ -48,15 +48,27 @@
    2. 提前结束治疗试验(EOT="DISCONTINUED")：VISIT=Early Termination
    3. 疗效评估：QS/FA/LB
 
-## 随访(VISIT=Follow-up)
+### 随访(VISIT=Follow-up)
 
    1. 治疗结束后进行安全随访和生存随访：VISIT=Follow-Up
 
-## 研究结束(VISIT=EOS)
+### 研究结束(VISIT=EOS)
 
    1. 结束随访后即整个研究结束(EOS="COMPLETED")：VISIT=End of Study
 
-          > 在写SE的时候，筛选期的SEENDTC是什么日期？治疗期的SEENDTC又是什么日期？在求RFPENDTC的时候，如果进行了生存随访，但是受试者在前几天就死亡了，今天这个随访日期我们能做到RFPENDTC里面去吗？
+### SE domain中的一些关键节点日期
+
+在SE domain中，有一些重要的节点日期：
+
+- 筛选期：
+  - 开始日期：填知情同意的日期(RFICDTC)
+  - 结束日期：治疗的开始日期，如果没有入组则应该是筛败日期(coalescec(RFXSTDTC, SFDTC))
+- 治疗期
+  - 开始日期：对于入组的受试者应该是(RFXSTDTC)
+  - 结束日期：对于入组的受试者应该是(RFXENDTC)
+- 随访期：
+  - 开始日期：治疗期的结束日期(RFXENDTC)
+  - 结束日期：整个study的结束日期(RFPENDTC)
 
 ## Analysis Population
 
@@ -273,6 +285,8 @@ NRI假设所有缺失数据的受试者都是"非应答者"。通常用于二分
   - 考虑进行敏感性分析,以评估NRI假设的影响。
 
 ### LOCF
+
+### OC
 
 ### MI(Multiple Imputation)
 
