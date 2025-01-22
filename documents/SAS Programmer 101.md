@@ -2473,6 +2473,42 @@ run;
     label=subject smoking status|subject drinking status|drinking amount before 3 months at screen|using status);
 ```
 
+### 根据window制作ANLFL
+
+```sas
+/* impute analysis flag as per windows range. */
+%macro wind(indat=,windat=,param=,crit=,out=,anlfl=); 
+    proc sql; 
+        create table temp1 as 
+            select a.*, b.* 
+            from &indat a left join &windat b 
+            on awlo <= ady <= awhi; 
+    quit; 
+    data temp1; 
+        set temp1; 
+        awtdiff=abs(ady-awtarget); 
+    run; 
+    proc sort data=temp1; by usubjid avisitn &crit ; run; 
+    data &out; 
+        set temp1; 
+        by &param usubjid avisitn &crit ; 
+        %if &anlfl ^= %then %do;  
+            if last.avisitn then &anlfl='Y'; 
+        %end; 
+        %else %do; 
+            if last.avisitn; 
+        %end; 
+    run; 
+%mend;
+
+%wind(indat=allrec, 
+    windat=awindow, 
+    param=, 
+    crit= descending awtdiff ady descending vistyp descending visitnum, 
+    out=final, 
+    anlfl=Y); 
+```
+
 ### 3.9. 正则表达式
 
 #### 3.9.1. 模式匹配
